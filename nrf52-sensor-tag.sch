@@ -749,4 +749,50 @@ Wire Wire Line
 Connection ~ 9600 1300
 Wire Wire Line
 	9600 1300 9900 1300
+$Comp
+L Connector:Conn_01x06_Male J1
+U 1 1 6020A1D2
+P 5100 6500
+F 0 "J1" H 5208 6881 50  0000 C CNN
+F 1 "Conn_01x06_Male" H 5208 6790 50  0000 C CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_1x06_P2.00mm_Vertical" H 5100 6500 50  0001 C CNN
+F 3 "~" H 5100 6500 50  0001 C CNN
+	1    5100 6500
+	1    0    0    -1  
+$EndComp
+Text Label 5700 6400 2    50   ~ 0
+SWDIO
+Text Label 5700 6300 2    50   ~ 0
+SWDCLK
+Text Label 5700 6500 2    50   ~ 0
+VCC
+$Comp
+L power:GND #PWR0118
+U 1 1 6020BEB6
+P 5900 6650
+F 0 "#PWR0118" H 5900 6400 50  0001 C CNN
+F 1 "GND" H 5905 6477 50  0000 C CNN
+F 2 "" H 5900 6650 50  0001 C CNN
+F 3 "" H 5900 6650 50  0001 C CNN
+	1    5900 6650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5300 6600 5900 6600
+Wire Wire Line
+	5700 6500 5300 6500
+Wire Wire Line
+	5300 6400 5700 6400
+Wire Wire Line
+	5700 6300 5300 6300
+Wire Wire Line
+	5900 6650 5900 6600
+Text Label 5700 6800 2    50   ~ 0
+Tx
+Text Label 5700 6700 2    50   ~ 0
+Rx
+Wire Wire Line
+	5700 6700 5300 6700
+Wire Wire Line
+	5700 6800 5300 6800
 $EndSCHEMATC
