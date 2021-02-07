@@ -158,12 +158,10 @@ F 3 "" H 8800 2550 50  0001 C CNN
 	1    8800 2550
 	1    0    0    -1  
 $EndComp
-Text Label 8250 1300 0    50   ~ 0
-VCC
+Text Label 7950 1300 0    50   ~ 0
+BME280_VCC
 Wire Wire Line
 	8600 1350 8600 1300
-Wire Wire Line
-	8600 1300 8250 1300
 Wire Wire Line
 	8800 1350 8800 1300
 Connection ~ 8600 1300
@@ -203,7 +201,7 @@ $EndComp
 Wire Wire Line
 	8600 1300 8800 1300
 Wire Wire Line
-	8800 1300 9900 1300
+	8800 1300 9600 1300
 Connection ~ 8800 1300
 Connection ~ 9900 1300
 Wire Wire Line
@@ -258,10 +256,6 @@ Text Label 6600 4900 2    50   ~ 0
 VCC
 Text Label 6600 5200 2    50   ~ 0
 VCC
-Text Label 9500 2250 2    50   ~ 0
-VCC
-Wire Wire Line
-	9500 2250 9300 2250
 Wire Wire Line
 	5900 4900 6150 4900
 Wire Wire Line
@@ -270,8 +264,8 @@ Wire Wire Line
 	6350 5200 6600 5200
 Wire Wire Line
 	6600 4900 6350 4900
-Text Label 7700 4800 0    50   ~ 0
-VCC
+Text Label 7300 4800 0    50   ~ 0
+MAX44_VCC
 $Comp
 L power:GND #PWR0105
 U 1 1 60246C23
@@ -483,8 +477,6 @@ F 3 "" H 7900 5050 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7700 4800 7900 4800
-Wire Wire Line
 	7900 4850 7900 4800
 Connection ~ 7900 4800
 Wire Wire Line
@@ -507,9 +499,7 @@ NoConn ~ 3850 3200
 NoConn ~ 3850 3300
 NoConn ~ 3850 3400
 NoConn ~ 3850 3500
-NoConn ~ 3850 3600
 NoConn ~ 3850 3700
-NoConn ~ 3850 3800
 NoConn ~ 3850 3900
 NoConn ~ 3850 4100
 NoConn ~ 3850 4300
@@ -528,10 +518,8 @@ NoConn ~ 3850 5500
 NoConn ~ 3850 5600
 NoConn ~ 3850 5700
 NoConn ~ 3850 5800
-Text Label 4250 4200 2    50   ~ 0
+Text Label 4200 3800 2    50   ~ 0
 ~INT1
-Wire Wire Line
-	4250 4200 3850 4200
 $Comp
 L EVQ-PUA02K:EVQ-PUA02K S1
 U 1 1 602F21F2
@@ -684,10 +672,8 @@ F 3 "" H 5450 4850 50  0001 C CNN
 	1    5450 4850
 	1    0    0    -1  
 $EndComp
-Text Label 4250 4000 2    50   ~ 0
+Text Label 4200 3600 2    50   ~ 0
 BTN
-Wire Wire Line
-	4250 4000 3850 4000
 Text Label 6750 3500 2    50   ~ 0
 BTN
 Text Label 5050 3500 0    50   ~ 0
@@ -696,4 +682,71 @@ Wire Wire Line
 	6750 3500 6500 3500
 Wire Wire Line
 	5050 3500 5300 3500
+Wire Wire Line
+	7950 1300 8500 1300
+Wire Wire Line
+	4200 3600 3850 3600
+Wire Wire Line
+	4200 3800 3850 3800
+Text Label 4400 4000 2    50   ~ 0
+MAX44_VCC
+Text Label 4400 4200 2    50   ~ 0
+BME280_VCC
+Wire Wire Line
+	3850 4200 4400 4200
+Wire Wire Line
+	3850 4000 4400 4000
+$Comp
+L Device:Jumper_NC_Small JP2
+U 1 1 6023FE8E
+P 8250 1050
+F 0 "JP2" H 8250 1262 50  0000 C CNN
+F 1 "Jumper_NC_Small" H 8250 1171 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 8250 1050 50  0001 C CNN
+F 3 "~" H 8250 1050 50  0001 C CNN
+	1    8250 1050
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Jumper_NC_Small JP1
+U 1 1 60240E97
+P 7650 4550
+F 0 "JP1" H 7650 4762 50  0000 C CNN
+F 1 "Jumper_NC_Small" H 7650 4671 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 7650 4550 50  0001 C CNN
+F 3 "~" H 7650 4550 50  0001 C CNN
+	1    7650 4550
+	1    0    0    -1  
+$EndComp
+Text Label 7300 4550 0    50   ~ 0
+VCC
+Wire Wire Line
+	7300 4550 7550 4550
+Wire Wire Line
+	7300 4800 7800 4800
+Wire Wire Line
+	7750 4550 7800 4550
+Wire Wire Line
+	7800 4550 7800 4800
+Connection ~ 7800 4800
+Wire Wire Line
+	7800 4800 7900 4800
+Text Label 7950 1050 0    50   ~ 0
+VCC
+Wire Wire Line
+	7950 1050 8150 1050
+Wire Wire Line
+	8350 1050 8500 1050
+Wire Wire Line
+	8500 1050 8500 1300
+Connection ~ 8500 1300
+Wire Wire Line
+	8500 1300 8600 1300
+Wire Wire Line
+	9600 2250 9600 1300
+Wire Wire Line
+	9300 2250 9600 2250
+Connection ~ 9600 1300
+Wire Wire Line
+	9600 1300 9900 1300
 $EndSCHEMATC
