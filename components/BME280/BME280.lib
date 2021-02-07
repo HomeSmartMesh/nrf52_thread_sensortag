@@ -1,0 +1,33 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#(c) SnapEDA 2016 (snapeda.com)
+#This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License (CC BY-SA) with Design Exception 1.0
+#
+# BME280
+#
+DEF BME280 U 0 40 Y Y 1 L N
+F0 "U" -400 525 50 H V L BNN
+F1 "BME280" -400 -600 50 H V L BNN
+F2 "PSON65P250X250X100-8N" 0 0 50 H I L BNN
+F3 "" 0 0 50 H I L BNN
+F4 "BME280" 0 0 50 H I L BNN "MP"
+F5 "IPC-7351B" 0 0 50 H I L BNN "STANDARD"
+F6 "4.94 USD" 0 0 50 H I L BNN "PRICE"
+F7 "Integrated pressure, humidity and temperature sensor; 8-pin 2.5x2.5x0.93mm LGA" 0 0 50 H I L BNN "DESCRIPTION"
+F8 "Bosch" 0 0 50 H I L BNN "MF"
+F9 "LGA-8 Bosch" 0 0 50 H I L BNN "PACKAGE"
+F10 "Good" 0 0 50 H I L BNN "AVAILABILITY"
+DRAW
+S -400 -500 400 500 0 0 16 f
+X VDD 8 600 300 200 L 40 40 0 0 W 
+X GND 1 600 -400 200 L 40 40 0 0 W 
+X GND 7 600 -400 200 L 40 40 0 0 W 
+X VDDIO 6 600 400 200 L 40 40 0 0 W 
+X CSB 2 -600 100 200 R 40 40 0 0 I 
+X SDO 5 -600 -200 200 R 40 40 0 0 B 
+X SDI 3 -600 -100 200 R 40 40 0 0 B 
+X SCK 4 -600 0 200 R 40 40 0 0 I C
+ENDDRAW
+ENDDEF
+#
+# End Library

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP BA2032SM
+D HOLDER COIN CELL 2032 EJECT SMD
+K
+F https://www.memoryprotectiondevices.com/datasheets/BA2032SM-datasheet.pdf
+$ENDCMP
+#
+#End Doc Library

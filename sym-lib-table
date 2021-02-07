@@ -1,0 +1,6 @@
+(sym_lib_table
+  (lib (name ISP1807-LR-RS)(type Legacy)(uri ${KIPRJMOD}/components/ISP1807-LR-RS/KiCad/ISP1807-LR-RS.lib)(options "")(descr ""))
+  (lib (name BME280)(type Legacy)(uri ${KIPRJMOD}/components/BME280/BME280.lib)(options "")(descr ""))
+  (lib (name MAX44009EDT+T)(type Legacy)(uri ${KIPRJMOD}/components/MAX44009EDT+T/KiCad/MAX44009EDT+T.lib)(options "")(descr ""))
+  (lib (name EVQ-PUA02K)(type Legacy)(uri ${KIPRJMOD}/components/EVQ-PUA02K/KiCad/EVQ-PUA02K.lib)(options "")(descr ""))
+)

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP MAX44009EDT+T
+D Ambient Light Sensor with ADC OTDFN6 Maxim MAX44009EDT+T, Light Sensor IC, Light to Serial I2C 1.7  3.6 V 6-Pin UTDFN
+K
+F https://componentsearchengine.com/Datasheets/2/MAX44009EDT+T.pdf
+$ENDCMP
+#
+#End Doc Library
