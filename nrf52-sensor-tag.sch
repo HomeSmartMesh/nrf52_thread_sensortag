@@ -4,11 +4,11 @@ EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
 Sheet 1 1
-Title "SuperPower-uC"
-Date "2020-09-20"
+Title "Thread Sensor Tag"
+Date "2021-02-08"
 Rev "0.1"
 Comp ""
-Comment1 "Licence: CERN-OHL-W"
+Comment1 "Licence: MIT"
 Comment2 ""
 Comment3 ""
 Comment4 ""
@@ -43,10 +43,6 @@ F 3 "" H 2700 6800 50  0001 C CNN
 	1    2700 6800
 	1    0    0    -1  
 $EndComp
-Text Label 1900 950  0    50   ~ 0
-VCC
-Wire Wire Line
-	1900 950  2350 950 
 Wire Wire Line
 	2350 950  2350 1050
 Text Label 1200 1800 0    50   ~ 0
@@ -109,31 +105,31 @@ $EndComp
 $Comp
 L MAX44009EDT+T:MAX44009EDT+T IC2
 U 1 1 602029D2
-P 8500 4800
-F 0 "IC2" H 9100 5065 50  0000 C CNN
-F 1 "MAX44009EDT+T" H 9100 4974 50  0000 C CNN
-F 2 "MAX44009EDT+T:SON65P200X200X65-7N-D" H 9550 4900 50  0001 L CNN
-F 3 "https://componentsearchengine.com/Datasheets/2/MAX44009EDT+T.pdf" H 9550 4800 50  0001 L CNN
-F 4 "Ambient Light Sensor with ADC OTDFN6 Maxim MAX44009EDT+T, Light Sensor IC, Light to Serial I2C 1.7  3.6 V 6-Pin UTDFN" H 9550 4700 50  0001 L CNN "Description"
-F 5 "0.65" H 9550 4600 50  0001 L CNN "Height"
-F 6 "Maxim Integrated" H 9550 4500 50  0001 L CNN "Manufacturer_Name"
-F 7 "MAX44009EDT+T" H 9550 4400 50  0001 L CNN "Manufacturer_Part_Number"
-F 8 "700-MAX44009EDT+T" H 9550 4300 50  0001 L CNN "Mouser Part Number"
-F 9 "https://www.mouser.com/Search/Refine.aspx?Keyword=700-MAX44009EDT%2BT" H 9550 4200 50  0001 L CNN "Mouser Price/Stock"
-F 10 "" H 9550 4100 50  0001 L CNN "Arrow Part Number"
-F 11 "" H 9550 4000 50  0001 L CNN "Arrow Price/Stock"
-	1    8500 4800
+P 8750 4900
+F 0 "IC2" H 9350 5165 50  0000 C CNN
+F 1 "MAX44009EDT+T" H 9350 5074 50  0000 C CNN
+F 2 "MAX44009EDT+T:SON65P200X200X65-7N-D" H 9800 5000 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/2/MAX44009EDT+T.pdf" H 9800 4900 50  0001 L CNN
+F 4 "Ambient Light Sensor with ADC OTDFN6 Maxim MAX44009EDT+T, Light Sensor IC, Light to Serial I2C 1.7  3.6 V 6-Pin UTDFN" H 9800 4800 50  0001 L CNN "Description"
+F 5 "0.65" H 9800 4700 50  0001 L CNN "Height"
+F 6 "Maxim Integrated" H 9800 4600 50  0001 L CNN "Manufacturer_Name"
+F 7 "MAX44009EDT+T" H 9800 4500 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "700-MAX44009EDT+T" H 9800 4400 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.com/Search/Refine.aspx?Keyword=700-MAX44009EDT%2BT" H 9800 4300 50  0001 L CNN "Mouser Price/Stock"
+F 10 "" H 9800 4200 50  0001 L CNN "Arrow Part Number"
+F 11 "" H 9800 4100 50  0001 L CNN "Arrow Price/Stock"
+	1    8750 4900
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:Battery_Cell BT1
 U 1 1 60204F7A
-P 6450 1350
-F 0 "BT1" V 6705 1400 50  0000 C CNN
-F 1 "Battery_Cell" V 6614 1400 50  0000 C CNN
-F 2 "BA2032SM:BA2032SM" V 6450 1410 50  0001 C CNN
-F 3 "~" V 6450 1410 50  0001 C CNN
-	1    6450 1350
+P 6400 1250
+F 0 "BT1" V 6655 1300 50  0000 C CNN
+F 1 "Battery_Cell" V 6564 1300 50  0000 C CNN
+F 2 "BA2032SM:BA2032SM" V 6400 1310 50  0001 C CNN
+F 3 "~" V 6400 1310 50  0001 C CNN
+	1    6400 1250
 	0    -1   -1   0   
 $EndComp
 $Comp
@@ -264,40 +260,40 @@ Wire Wire Line
 	6350 5200 6600 5200
 Wire Wire Line
 	6600 4900 6350 4900
-Text Label 7300 4800 0    50   ~ 0
+Text Label 7550 4900 0    50   ~ 0
 MAX44_VCC
 $Comp
 L power:GND #PWR0105
 U 1 1 60246C23
-P 8300 5150
-F 0 "#PWR0105" H 8300 4900 50  0001 C CNN
-F 1 "GND" H 8305 4977 50  0000 C CNN
-F 2 "" H 8300 5150 50  0001 C CNN
-F 3 "" H 8300 5150 50  0001 C CNN
-	1    8300 5150
+P 8550 5250
+F 0 "#PWR0105" H 8550 5000 50  0001 C CNN
+F 1 "GND" H 8555 5077 50  0000 C CNN
+F 2 "" H 8550 5250 50  0001 C CNN
+F 3 "" H 8550 5250 50  0001 C CNN
+	1    8550 5250
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8500 4900 8300 4900
+	8750 5000 8550 5000
 Wire Wire Line
-	8300 4900 8300 5000
+	8550 5000 8550 5100
 Wire Wire Line
-	8500 5000 8300 5000
-Connection ~ 8300 5000
+	8750 5100 8550 5100
+Connection ~ 8550 5100
 Wire Wire Line
-	8300 5000 8300 5150
-Text Label 10000 4900 2    50   ~ 0
+	8550 5100 8550 5250
+Text Label 10250 5000 2    50   ~ 0
 SCL
-Text Label 10000 4800 2    50   ~ 0
+Text Label 10250 4900 2    50   ~ 0
 SDA
 Wire Wire Line
-	10000 4800 9700 4800
+	10250 4900 9950 4900
 Wire Wire Line
-	10000 4900 9700 4900
-Text Label 10000 5000 2    50   ~ 0
+	10250 5000 9950 5000
+Text Label 10250 5100 2    50   ~ 0
 ~INT1
 Wire Wire Line
-	10000 5000 9700 5000
+	10250 5100 9950 5100
 Text Label 5900 5450 0    50   ~ 0
 ~INT1
 $Comp
@@ -320,19 +316,19 @@ Wire Wire Line
 $Comp
 L power:GND #PWR0106
 U 1 1 602629B5
-P 9100 5500
-F 0 "#PWR0106" H 9100 5250 50  0001 C CNN
-F 1 "GND" H 9105 5327 50  0000 C CNN
-F 2 "" H 9100 5500 50  0001 C CNN
-F 3 "" H 9100 5500 50  0001 C CNN
-	1    9100 5500
+P 9350 5600
+F 0 "#PWR0106" H 9350 5350 50  0001 C CNN
+F 1 "GND" H 9355 5427 50  0000 C CNN
+F 2 "" H 9350 5600 50  0001 C CNN
+F 3 "" H 9350 5600 50  0001 C CNN
+	1    9350 5600
 	1    0    0    -1  
 $EndComp
-Text Notes 9950 5650 0    50   ~ 0
+Text Notes 10200 5750 0    50   ~ 0
 1001010x
 Text Notes 9500 2600 0    50   ~ 0
 I2C Address: 0x76
-Text Notes 9600 5550 0    50   ~ 0
+Text Notes 9850 5650 0    50   ~ 0
 I2C Address: 0x4A
 $Comp
 L Device:C_Small C1
@@ -388,99 +384,99 @@ $EndComp
 $Comp
 L Device:C_Small C3
 U 1 1 60277C20
-P 5600 1450
-F 0 "C3" H 5692 1496 50  0000 L CNN
-F 1 "10uF" H 5692 1405 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 5600 1450 50  0001 C CNN
-F 3 "~" H 5600 1450 50  0001 C CNN
-	1    5600 1450
+P 5550 1350
+F 0 "C3" H 5642 1396 50  0000 L CNN
+F 1 "10uF" H 5642 1305 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5550 1350 50  0001 C CNN
+F 3 "~" H 5550 1350 50  0001 C CNN
+	1    5550 1350
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C_Small C4
 U 1 1 6027821B
-P 5950 1450
-F 0 "C4" H 6042 1496 50  0000 L CNN
-F 1 "0.1uF" H 6042 1405 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 5950 1450 50  0001 C CNN
-F 3 "~" H 5950 1450 50  0001 C CNN
-	1    5950 1450
+P 5900 1350
+F 0 "C4" H 5992 1396 50  0000 L CNN
+F 1 "0.1uF" H 5992 1305 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 5900 1350 50  0001 C CNN
+F 3 "~" H 5900 1350 50  0001 C CNN
+	1    5900 1350
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6250 1350 5950 1350
-Connection ~ 5600 1350
+	6200 1250 5900 1250
+Connection ~ 5550 1250
 Wire Wire Line
-	5600 1350 5400 1350
-Connection ~ 5950 1350
+	5550 1250 5350 1250
+Connection ~ 5900 1250
 Wire Wire Line
-	5950 1350 5600 1350
+	5900 1250 5550 1250
 $Comp
 L power:GND #PWR0109
 U 1 1 6027D829
-P 5600 1550
-F 0 "#PWR0109" H 5600 1300 50  0001 C CNN
-F 1 "GND" H 5605 1377 50  0000 C CNN
-F 2 "" H 5600 1550 50  0001 C CNN
-F 3 "" H 5600 1550 50  0001 C CNN
-	1    5600 1550
+P 5550 1450
+F 0 "#PWR0109" H 5550 1200 50  0001 C CNN
+F 1 "GND" H 5555 1277 50  0000 C CNN
+F 2 "" H 5550 1450 50  0001 C CNN
+F 3 "" H 5550 1450 50  0001 C CNN
+	1    5550 1450
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0110
 U 1 1 6027E10B
-P 5950 1550
-F 0 "#PWR0110" H 5950 1300 50  0001 C CNN
-F 1 "GND" H 5955 1377 50  0000 C CNN
-F 2 "" H 5950 1550 50  0001 C CNN
-F 3 "" H 5950 1550 50  0001 C CNN
-	1    5950 1550
+P 5900 1450
+F 0 "#PWR0110" H 5900 1200 50  0001 C CNN
+F 1 "GND" H 5905 1277 50  0000 C CNN
+F 2 "" H 5900 1450 50  0001 C CNN
+F 3 "" H 5900 1450 50  0001 C CNN
+	1    5900 1450
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0111
 U 1 1 6027E39F
-P 6700 1550
-F 0 "#PWR0111" H 6700 1300 50  0001 C CNN
-F 1 "GND" H 6705 1377 50  0000 C CNN
-F 2 "" H 6700 1550 50  0001 C CNN
-F 3 "" H 6700 1550 50  0001 C CNN
-	1    6700 1550
+P 6650 1450
+F 0 "#PWR0111" H 6650 1200 50  0001 C CNN
+F 1 "GND" H 6655 1277 50  0000 C CNN
+F 2 "" H 6650 1450 50  0001 C CNN
+F 3 "" H 6650 1450 50  0001 C CNN
+	1    6650 1450
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6700 1550 6700 1350
+	6650 1450 6650 1250
 Wire Wire Line
-	6700 1350 6550 1350
-Text Label 5400 1350 0    50   ~ 0
+	6650 1250 6500 1250
+Text Label 5350 1250 0    50   ~ 0
 VCC
 $Comp
 L Device:C_Small C8
 U 1 1 602BB820
-P 7900 4950
-F 0 "C8" H 7992 4996 50  0000 L CNN
-F 1 "1uF" H 7992 4905 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 7900 4950 50  0001 C CNN
-F 3 "~" H 7900 4950 50  0001 C CNN
-	1    7900 4950
+P 8150 5050
+F 0 "C8" H 8242 5096 50  0000 L CNN
+F 1 "1uF" H 8242 5005 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 8150 5050 50  0001 C CNN
+F 3 "~" H 8150 5050 50  0001 C CNN
+	1    8150 5050
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0112
 U 1 1 602BCCE7
-P 7900 5050
-F 0 "#PWR0112" H 7900 4800 50  0001 C CNN
-F 1 "GND" H 7905 4877 50  0000 C CNN
-F 2 "" H 7900 5050 50  0001 C CNN
-F 3 "" H 7900 5050 50  0001 C CNN
-	1    7900 5050
+P 8150 5150
+F 0 "#PWR0112" H 8150 4900 50  0001 C CNN
+F 1 "GND" H 8155 4977 50  0000 C CNN
+F 2 "" H 8150 5150 50  0001 C CNN
+F 3 "" H 8150 5150 50  0001 C CNN
+	1    8150 5150
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7900 4850 7900 4800
-Connection ~ 7900 4800
+	8150 4950 8150 4900
+Connection ~ 8150 4900
 Wire Wire Line
-	7900 4800 8500 4800
+	8150 4900 8750 4900
 NoConn ~ 3850 1500
 NoConn ~ 3850 1700
 NoConn ~ 3850 1800
@@ -489,9 +485,7 @@ NoConn ~ 3850 2000
 NoConn ~ 3850 2100
 NoConn ~ 3850 2200
 NoConn ~ 3850 2300
-NoConn ~ 3850 2600
 NoConn ~ 3850 2700
-NoConn ~ 3850 2800
 NoConn ~ 3850 2900
 NoConn ~ 3850 3000
 NoConn ~ 3850 3100
@@ -523,49 +517,49 @@ Text Label 4200 3800 2    50   ~ 0
 $Comp
 L EVQ-PUA02K:EVQ-PUA02K S1
 U 1 1 602F21F2
-P 5300 2900
-F 0 "S1" H 5900 3165 50  0000 C CNN
-F 1 "EVQ-PUA02K" H 5900 3074 50  0000 C CNN
-F 2 "EVQ-PUA02K:EVQPUA02K" H 6350 3000 50  0001 L CNN
-F 3 "https://www.mouser.in/ProductDetail/Panasonic/EVQ-PUA02K?qs=%2Fha2pyFadujMSX8lHuHLeTqtnZtxLpuLygd0%252BejhC2g%3D" H 6350 2900 50  0001 L CNN
-F 4 "Tactile Switches SIDE PUSH 2.2NF 4.7x3.2x1.65mm" H 6350 2800 50  0001 L CNN "Description"
-F 5 "1.95" H 6350 2700 50  0001 L CNN "Height"
-F 6 "Panasonic" H 6350 2600 50  0001 L CNN "Manufacturer_Name"
-F 7 "EVQ-PUA02K" H 6350 2500 50  0001 L CNN "Manufacturer_Part_Number"
-F 8 "667-EVQ-PUA02K" H 6350 2400 50  0001 L CNN "Mouser Part Number"
-F 9 "https://www.mouser.co.uk/ProductDetail/Panasonic/EVQ-PUA02K?qs=whhzBCqEXCvFsgipcL1tig%3D%3D" H 6350 2300 50  0001 L CNN "Mouser Price/Stock"
-F 10 "EVQ-PUA02K" H 6350 2200 50  0001 L CNN "Arrow Part Number"
-F 11 "https://www.arrow.com/en/products/evq-pua02k/panasonic" H 6350 2100 50  0001 L CNN "Arrow Price/Stock"
-	1    5300 2900
+P 5600 2750
+F 0 "S1" H 6200 3015 50  0000 C CNN
+F 1 "EVQ-PUA02K" H 6200 2924 50  0000 C CNN
+F 2 "EVQ-PUA02K:EVQPUA02K" H 6650 2850 50  0001 L CNN
+F 3 "https://www.mouser.in/ProductDetail/Panasonic/EVQ-PUA02K?qs=%2Fha2pyFadujMSX8lHuHLeTqtnZtxLpuLygd0%252BejhC2g%3D" H 6650 2750 50  0001 L CNN
+F 4 "Tactile Switches SIDE PUSH 2.2NF 4.7x3.2x1.65mm" H 6650 2650 50  0001 L CNN "Description"
+F 5 "1.95" H 6650 2550 50  0001 L CNN "Height"
+F 6 "Panasonic" H 6650 2450 50  0001 L CNN "Manufacturer_Name"
+F 7 "EVQ-PUA02K" H 6650 2350 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "667-EVQ-PUA02K" H 6650 2250 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Panasonic/EVQ-PUA02K?qs=whhzBCqEXCvFsgipcL1tig%3D%3D" H 6650 2150 50  0001 L CNN "Mouser Price/Stock"
+F 10 "EVQ-PUA02K" H 6650 2050 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/evq-pua02k/panasonic" H 6650 1950 50  0001 L CNN "Arrow Price/Stock"
+	1    5600 2750
 	1    0    0    -1  
 $EndComp
 $Comp
 L EVQ-PUA02K:EVQ-PUA02K S2
 U 1 1 602F2ECF
-P 5300 3500
-F 0 "S2" H 5900 3765 50  0000 C CNN
-F 1 "EVQ-PUA02K" H 5900 3674 50  0000 C CNN
-F 2 "EVQ-PUA02K:EVQPUA02K" H 6350 3600 50  0001 L CNN
-F 3 "https://www.mouser.in/ProductDetail/Panasonic/EVQ-PUA02K?qs=%2Fha2pyFadujMSX8lHuHLeTqtnZtxLpuLygd0%252BejhC2g%3D" H 6350 3500 50  0001 L CNN
-F 4 "Tactile Switches SIDE PUSH 2.2NF 4.7x3.2x1.65mm" H 6350 3400 50  0001 L CNN "Description"
-F 5 "1.95" H 6350 3300 50  0001 L CNN "Height"
-F 6 "Panasonic" H 6350 3200 50  0001 L CNN "Manufacturer_Name"
-F 7 "EVQ-PUA02K" H 6350 3100 50  0001 L CNN "Manufacturer_Part_Number"
-F 8 "667-EVQ-PUA02K" H 6350 3000 50  0001 L CNN "Mouser Part Number"
-F 9 "https://www.mouser.co.uk/ProductDetail/Panasonic/EVQ-PUA02K?qs=whhzBCqEXCvFsgipcL1tig%3D%3D" H 6350 2900 50  0001 L CNN "Mouser Price/Stock"
-F 10 "EVQ-PUA02K" H 6350 2800 50  0001 L CNN "Arrow Part Number"
-F 11 "https://www.arrow.com/en/products/evq-pua02k/panasonic" H 6350 2700 50  0001 L CNN "Arrow Price/Stock"
-	1    5300 3500
+P 5600 3350
+F 0 "S2" H 6200 3615 50  0000 C CNN
+F 1 "EVQ-PUA02K" H 6200 3524 50  0000 C CNN
+F 2 "EVQ-PUA02K:EVQPUA02K" H 6650 3450 50  0001 L CNN
+F 3 "https://www.mouser.in/ProductDetail/Panasonic/EVQ-PUA02K?qs=%2Fha2pyFadujMSX8lHuHLeTqtnZtxLpuLygd0%252BejhC2g%3D" H 6650 3350 50  0001 L CNN
+F 4 "Tactile Switches SIDE PUSH 2.2NF 4.7x3.2x1.65mm" H 6650 3250 50  0001 L CNN "Description"
+F 5 "1.95" H 6650 3150 50  0001 L CNN "Height"
+F 6 "Panasonic" H 6650 3050 50  0001 L CNN "Manufacturer_Name"
+F 7 "EVQ-PUA02K" H 6650 2950 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "667-EVQ-PUA02K" H 6650 2850 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Panasonic/EVQ-PUA02K?qs=whhzBCqEXCvFsgipcL1tig%3D%3D" H 6650 2750 50  0001 L CNN "Mouser Price/Stock"
+F 10 "EVQ-PUA02K" H 6650 2650 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/evq-pua02k/panasonic" H 6650 2550 50  0001 L CNN "Arrow Price/Stock"
+	1    5600 3350
 	1    0    0    -1  
 $EndComp
-Text Label 5050 2900 0    50   ~ 0
+Text Label 5350 2750 0    50   ~ 0
 RESET
-Text Label 6750 2900 2    50   ~ 0
+Text Label 7050 2750 2    50   ~ 0
 RESET
 Wire Wire Line
-	6750 2900 6500 2900
+	7050 2750 6800 2750
 Wire Wire Line
-	5300 2900 5050 2900
+	5600 2750 5350 2750
 $Comp
 L Device:R_Small R4
 U 1 1 602F6D0F
@@ -586,63 +580,63 @@ Wire Wire Line
 $Comp
 L power:GND #PWR0113
 U 1 1 602FFED1
-P 6600 3050
-F 0 "#PWR0113" H 6600 2800 50  0001 C CNN
-F 1 "GND" H 6605 2877 50  0000 C CNN
-F 2 "" H 6600 3050 50  0001 C CNN
-F 3 "" H 6600 3050 50  0001 C CNN
-	1    6600 3050
+P 6900 2900
+F 0 "#PWR0113" H 6900 2650 50  0001 C CNN
+F 1 "GND" H 6905 2727 50  0000 C CNN
+F 2 "" H 6900 2900 50  0001 C CNN
+F 3 "" H 6900 2900 50  0001 C CNN
+	1    6900 2900
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0114
 U 1 1 6030047E
-P 5200 3050
-F 0 "#PWR0114" H 5200 2800 50  0001 C CNN
-F 1 "GND" H 5205 2877 50  0000 C CNN
-F 2 "" H 5200 3050 50  0001 C CNN
-F 3 "" H 5200 3050 50  0001 C CNN
-	1    5200 3050
+P 5500 2900
+F 0 "#PWR0114" H 5500 2650 50  0001 C CNN
+F 1 "GND" H 5505 2727 50  0000 C CNN
+F 2 "" H 5500 2900 50  0001 C CNN
+F 3 "" H 5500 2900 50  0001 C CNN
+	1    5500 2900
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0115
 U 1 1 60300925
-P 5200 3650
-F 0 "#PWR0115" H 5200 3400 50  0001 C CNN
-F 1 "GND" H 5205 3477 50  0000 C CNN
-F 2 "" H 5200 3650 50  0001 C CNN
-F 3 "" H 5200 3650 50  0001 C CNN
-	1    5200 3650
+P 5500 3500
+F 0 "#PWR0115" H 5500 3250 50  0001 C CNN
+F 1 "GND" H 5505 3327 50  0000 C CNN
+F 2 "" H 5500 3500 50  0001 C CNN
+F 3 "" H 5500 3500 50  0001 C CNN
+	1    5500 3500
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0116
 U 1 1 60300BD0
-P 6600 3650
-F 0 "#PWR0116" H 6600 3400 50  0001 C CNN
-F 1 "GND" H 6605 3477 50  0000 C CNN
-F 2 "" H 6600 3650 50  0001 C CNN
-F 3 "" H 6600 3650 50  0001 C CNN
-	1    6600 3650
+P 6900 3500
+F 0 "#PWR0116" H 6900 3250 50  0001 C CNN
+F 1 "GND" H 6905 3327 50  0000 C CNN
+F 2 "" H 6900 3500 50  0001 C CNN
+F 3 "" H 6900 3500 50  0001 C CNN
+	1    6900 3500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	6600 3650 6600 3600
+	6900 3500 6900 3450
 Wire Wire Line
-	6600 3600 6500 3600
+	6900 3450 6800 3450
 Wire Wire Line
-	5300 3600 5200 3600
+	5600 3450 5500 3450
 Wire Wire Line
-	5200 3600 5200 3650
+	5500 3450 5500 3500
 Wire Wire Line
-	5200 3050 5200 3000
+	5500 2900 5500 2850
 Wire Wire Line
-	5200 3000 5300 3000
+	5500 2850 5600 2850
 Wire Wire Line
-	6500 3000 6600 3000
+	6800 2850 6900 2850
 Wire Wire Line
-	6600 3000 6600 3050
+	6900 2850 6900 2900
 $Comp
 L Device:C_Small C7
 U 1 1 603070B2
@@ -674,14 +668,14 @@ F 3 "" H 5450 4850 50  0001 C CNN
 $EndComp
 Text Label 4200 3600 2    50   ~ 0
 BTN
-Text Label 6750 3500 2    50   ~ 0
+Text Label 7050 3350 2    50   ~ 0
 BTN
-Text Label 5050 3500 0    50   ~ 0
+Text Label 5350 3350 0    50   ~ 0
 BTN
 Wire Wire Line
-	6750 3500 6500 3500
+	7050 3350 6800 3350
 Wire Wire Line
-	5050 3500 5300 3500
+	5350 3350 5600 3350
 Wire Wire Line
 	7950 1300 8500 1300
 Wire Wire Line
@@ -710,27 +704,27 @@ $EndComp
 $Comp
 L Device:Jumper_NC_Small JP1
 U 1 1 60240E97
-P 7650 4550
-F 0 "JP1" H 7650 4762 50  0000 C CNN
-F 1 "Jumper_NC_Small" H 7650 4671 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 7650 4550 50  0001 C CNN
-F 3 "~" H 7650 4550 50  0001 C CNN
-	1    7650 4550
+P 7900 4650
+F 0 "JP1" H 7900 4862 50  0000 C CNN
+F 1 "Jumper_NC_Small" H 7900 4771 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 7900 4650 50  0001 C CNN
+F 3 "~" H 7900 4650 50  0001 C CNN
+	1    7900 4650
 	1    0    0    -1  
 $EndComp
-Text Label 7300 4550 0    50   ~ 0
+Text Label 7550 4650 0    50   ~ 0
 VCC
 Wire Wire Line
-	7300 4550 7550 4550
+	7550 4650 7800 4650
 Wire Wire Line
-	7300 4800 7800 4800
+	7550 4900 8050 4900
 Wire Wire Line
-	7750 4550 7800 4550
+	8000 4650 8050 4650
 Wire Wire Line
-	7800 4550 7800 4800
-Connection ~ 7800 4800
+	8050 4650 8050 4900
+Connection ~ 8050 4900
 Wire Wire Line
-	7800 4800 7900 4800
+	8050 4900 8150 4900
 Text Label 7950 1050 0    50   ~ 0
 VCC
 Wire Wire Line
@@ -752,47 +746,84 @@ Wire Wire Line
 $Comp
 L Connector:Conn_01x06_Male J1
 U 1 1 6020A1D2
-P 5100 6500
-F 0 "J1" H 5208 6881 50  0000 C CNN
-F 1 "Conn_01x06_Male" H 5208 6790 50  0000 C CNN
-F 2 "Connector_PinHeader_2.00mm:PinHeader_1x06_P2.00mm_Vertical" H 5100 6500 50  0001 C CNN
-F 3 "~" H 5100 6500 50  0001 C CNN
-	1    5100 6500
+P 5200 6650
+F 0 "J1" H 5308 7031 50  0000 C CNN
+F 1 "Conn_01x06_Male" H 5308 6940 50  0000 C CNN
+F 2 "Connector_PinHeader_2.00mm:PinHeader_1x06_P2.00mm_Vertical" H 5200 6650 50  0001 C CNN
+F 3 "~" H 5200 6650 50  0001 C CNN
+	1    5200 6650
 	1    0    0    -1  
 $EndComp
-Text Label 5700 6400 2    50   ~ 0
+Text Label 5800 6550 2    50   ~ 0
 SWDIO
-Text Label 5700 6300 2    50   ~ 0
+Text Label 5800 6450 2    50   ~ 0
 SWDCLK
-Text Label 5700 6500 2    50   ~ 0
+Text Label 5800 6650 2    50   ~ 0
 VCC
 $Comp
 L power:GND #PWR0118
 U 1 1 6020BEB6
-P 5900 6650
-F 0 "#PWR0118" H 5900 6400 50  0001 C CNN
-F 1 "GND" H 5905 6477 50  0000 C CNN
-F 2 "" H 5900 6650 50  0001 C CNN
-F 3 "" H 5900 6650 50  0001 C CNN
-	1    5900 6650
+P 6000 6800
+F 0 "#PWR0118" H 6000 6550 50  0001 C CNN
+F 1 "GND" H 6005 6627 50  0000 C CNN
+F 2 "" H 6000 6800 50  0001 C CNN
+F 3 "" H 6000 6800 50  0001 C CNN
+	1    6000 6800
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5300 6600 5900 6600
+	5400 6750 6000 6750
 Wire Wire Line
-	5700 6500 5300 6500
+	5800 6650 5400 6650
 Wire Wire Line
-	5300 6400 5700 6400
+	5400 6550 5800 6550
 Wire Wire Line
-	5700 6300 5300 6300
+	5800 6450 5400 6450
 Wire Wire Line
-	5900 6650 5900 6600
-Text Label 5700 6800 2    50   ~ 0
+	6000 6800 6000 6750
+Text Label 5800 6950 2    50   ~ 0
 Tx
-Text Label 5700 6700 2    50   ~ 0
+Text Label 5800 6850 2    50   ~ 0
 Rx
 Wire Wire Line
-	5700 6700 5300 6700
+	5800 6850 5400 6850
 Wire Wire Line
-	5700 6800 5300 6800
+	5800 6950 5400 6950
+Text Label 4400 2600 2    50   ~ 0
+Rx
+Text Label 4400 2800 2    50   ~ 0
+Tx
+Wire Wire Line
+	4400 2600 3850 2600
+Wire Wire Line
+	4400 2800 3850 2800
+Wire Wire Line
+	1400 950  2350 950 
+Connection ~ 1400 950 
+Wire Notes Line
+	7350 500  7350 6500
+Wire Notes Line
+	7350 3450 11200 3450
+Wire Notes Line
+	7350 4000 4650 4000
+Wire Notes Line
+	4650 5750 7350 5750
+Wire Notes Line
+	4650 500  4650 7800
+Wire Notes Line
+	4650 2100 7350 2100
+Text Notes 4750 650  0    50   ~ 0
+Battery Input
+Text Notes 7450 650  0    50   ~ 0
+BME280 Humid, Temp, Presure
+Text Notes 7450 3650 0    50   ~ 0
+MAX44009 Light Sensor
+Text Notes 4750 2250 0    50   ~ 0
+Button
+Text Notes 4750 4150 0    50   ~ 0
+Pull-Ups
+Text Notes 4750 5950 0    50   ~ 0
+Debug
+Text Notes 600  650  0    50   ~ 0
+ISP1807 (nRF52) µC
 $EndSCHEMATC
