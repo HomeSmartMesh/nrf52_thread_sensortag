@@ -14,33 +14,14 @@ Comment3 ""
 Comment4 ""
 $EndDescr
 $Comp
-L ISP1807-LR-RS:ISP1807-LR-RS IC1
-U 1 1 601E6B9F
-P 1550 1400
-F 0 "IC1" H 2750 1700 50  0000 C CNN
-F 1 "ISP1807-LR-RS" H 2750 1600 50  0000 C CNN
-F 2 "ISP1807:ISP1807LRRS" H 3700 1500 50  0001 L CNN
-F 3 "https://www.insightsip.com/fichiers_insightsip/pdf/ble/ISP1807/isp_ble_DS1807.pdf" H 3700 1400 50  0001 L CNN
-F 4 "RX TXRX MODULE BT TRC ANT SMD" H 3700 1300 50  0001 L CNN "Description"
-F 5 "1" H 3700 1200 50  0001 L CNN "Height"
-F 6 "Insight SIP" H 3700 1100 50  0001 L CNN "Manufacturer_Name"
-F 7 "ISP1807-LR-RS" H 3700 1000 50  0001 L CNN "Manufacturer_Part_Number"
-F 8 "359-ISP1807-LR-RS" H 3700 900 50  0001 L CNN "Mouser Part Number"
-F 9 "https://www.mouser.co.uk/ProductDetail/Insight-SiP/ISP1807-LR-RS?qs=PqoDHHvF649jBaTuCZQSOQ%3D%3D" H 3700 800 50  0001 L CNN "Mouser Price/Stock"
-F 10 "" H 3700 700 50  0001 L CNN "Arrow Part Number"
-F 11 "" H 3700 600 50  0001 L CNN "Arrow Price/Stock"
-	1    1550 1400
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR0101
 U 1 1 6021B8C4
-P 2700 6800
-F 0 "#PWR0101" H 2700 6550 50  0001 C CNN
-F 1 "GND" H 2705 6627 50  0000 C CNN
-F 2 "" H 2700 6800 50  0001 C CNN
-F 3 "" H 2700 6800 50  0001 C CNN
-	1    2700 6800
+P 2700 6850
+F 0 "#PWR0101" H 2700 6600 50  0001 C CNN
+F 1 "GND" H 2705 6677 50  0000 C CNN
+F 2 "" H 2700 6850 50  0001 C CNN
+F 3 "" H 2700 6850 50  0001 C CNN
+	1    2700 6850
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -135,23 +116,23 @@ $EndComp
 $Comp
 L power:GND #PWR0102
 U 1 1 6020BA24
-P 8600 2550
-F 0 "#PWR0102" H 8600 2300 50  0001 C CNN
-F 1 "GND" H 8605 2377 50  0000 C CNN
-F 2 "" H 8600 2550 50  0001 C CNN
-F 3 "" H 8600 2550 50  0001 C CNN
-	1    8600 2550
+P 8600 2600
+F 0 "#PWR0102" H 8600 2350 50  0001 C CNN
+F 1 "GND" H 8605 2427 50  0000 C CNN
+F 2 "" H 8600 2600 50  0001 C CNN
+F 3 "" H 8600 2600 50  0001 C CNN
+	1    8600 2600
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0103
 U 1 1 6020C669
-P 8800 2550
-F 0 "#PWR0103" H 8800 2300 50  0001 C CNN
-F 1 "GND" H 8805 2377 50  0000 C CNN
-F 2 "" H 8800 2550 50  0001 C CNN
-F 3 "" H 8800 2550 50  0001 C CNN
-	1    8800 2550
+P 8800 2600
+F 0 "#PWR0103" H 8800 2350 50  0001 C CNN
+F 1 "GND" H 8805 2427 50  0000 C CNN
+F 2 "" H 8800 2600 50  0001 C CNN
+F 3 "" H 8800 2600 50  0001 C CNN
+	1    8800 2600
 	1    0    0    -1  
 $EndComp
 Text Label 7950 1300 0    50   ~ 0
@@ -195,7 +176,7 @@ F 3 "" H 10300 1700 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8600 1300 8800 1300
+	8600 1300 8700 1300
 Wire Wire Line
 	8800 1300 9600 1300
 Connection ~ 8800 1300
@@ -476,7 +457,7 @@ Wire Wire Line
 	8150 4950 8150 4900
 Connection ~ 8150 4900
 Wire Wire Line
-	8150 4900 8750 4900
+	8150 4900 8450 4900
 NoConn ~ 3850 1500
 NoConn ~ 3850 1700
 NoConn ~ 3850 1800
@@ -743,17 +724,6 @@ Wire Wire Line
 Connection ~ 9600 1300
 Wire Wire Line
 	9600 1300 9900 1300
-$Comp
-L Connector:Conn_01x06_Male J1
-U 1 1 6020A1D2
-P 5200 6650
-F 0 "J1" H 5308 7031 50  0000 C CNN
-F 1 "Conn_01x06_Male" H 5308 6940 50  0000 C CNN
-F 2 "Connector_PinHeader_2.00mm:PinHeader_1x06_P2.00mm_Vertical" H 5200 6650 50  0001 C CNN
-F 3 "~" H 5200 6650 50  0001 C CNN
-	1    5200 6650
-	1    0    0    -1  
-$EndComp
 Text Label 5800 6550 2    50   ~ 0
 SWDIO
 Text Label 5800 6450 2    50   ~ 0
@@ -772,7 +742,7 @@ F 3 "" H 6000 6800 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	5400 6750 6000 6750
+	5400 6750 5500 6750
 Wire Wire Line
 	5800 6650 5400 6650
 Wire Wire Line
@@ -781,14 +751,14 @@ Wire Wire Line
 	5800 6450 5400 6450
 Wire Wire Line
 	6000 6800 6000 6750
-Text Label 5800 6950 2    50   ~ 0
+Text Label 5800 7050 2    50   ~ 0
 Tx
-Text Label 5800 6850 2    50   ~ 0
+Text Label 5800 6950 2    50   ~ 0
 Rx
 Wire Wire Line
-	5800 6850 5400 6850
-Wire Wire Line
 	5800 6950 5400 6950
+Wire Wire Line
+	5800 7050 5400 7050
 Text Label 4400 2600 2    50   ~ 0
 Rx
 Text Label 4400 2800 2    50   ~ 0
@@ -798,7 +768,7 @@ Wire Wire Line
 Wire Wire Line
 	4400 2800 3850 2800
 Wire Wire Line
-	1400 950  2350 950 
+	1400 950  2050 950 
 Connection ~ 1400 950 
 Wire Notes Line
 	7350 500  7350 6500
@@ -826,4 +796,94 @@ Text Notes 4750 5950 0    50   ~ 0
 Debug
 Text Notes 600  650  0    50   ~ 0
 ISP1807 (nRF52) µC
+$Comp
+L Connector:Conn_01x07_Male J3
+U 1 1 6021CB85
+P 5200 6750
+F 0 "J3" H 5308 7231 50  0000 C CNN
+F 1 "Conn_01x07_Male" H 5308 7140 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x07_P2.54mm_Vertical" H 5200 6750 50  0001 C CNN
+F 3 "~" H 5200 6750 50  0001 C CNN
+	1    5200 6750
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5400 6850 5500 6850
+Wire Wire Line
+	5500 6850 5500 6750
+Connection ~ 5500 6750
+Wire Wire Line
+	5500 6750 6000 6750
+NoConn ~ 4400 1400
+NoConn ~ 4400 1600
+NoConn ~ 1200 1800
+NoConn ~ 1200 1900
+NoConn ~ 1200 2000
+$Comp
+L power:PWR_FLAG #FLG0101
+U 1 1 6029FC8F
+P 2050 950
+F 0 "#FLG0101" H 2050 1025 50  0001 C CNN
+F 1 "PWR_FLAG" H 2050 1123 50  0000 C CNN
+F 2 "" H 2050 950 50  0001 C CNN
+F 3 "~" H 2050 950 50  0001 C CNN
+	1    2050 950 
+	1    0    0    -1  
+$EndComp
+Connection ~ 2050 950 
+Wire Wire Line
+	2050 950  2350 950 
+$Comp
+L power:PWR_FLAG #FLG0102
+U 1 1 602A143F
+P 8450 4900
+F 0 "#FLG0102" H 8450 4975 50  0001 C CNN
+F 1 "PWR_FLAG" H 8450 5073 50  0000 C CNN
+F 2 "" H 8450 4900 50  0001 C CNN
+F 3 "~" H 8450 4900 50  0001 C CNN
+	1    8450 4900
+	1    0    0    -1  
+$EndComp
+Connection ~ 8450 4900
+Wire Wire Line
+	8450 4900 8750 4900
+$Comp
+L power:PWR_FLAG #FLG0103
+U 1 1 602A1E76
+P 8700 1300
+F 0 "#FLG0103" H 8700 1375 50  0001 C CNN
+F 1 "PWR_FLAG" H 8700 1473 50  0000 C CNN
+F 2 "" H 8700 1300 50  0001 C CNN
+F 3 "~" H 8700 1300 50  0001 C CNN
+	1    8700 1300
+	1    0    0    -1  
+$EndComp
+Connection ~ 8700 1300
+Wire Wire Line
+	8700 1300 8800 1300
+Wire Wire Line
+	8600 2550 8600 2600
+Wire Wire Line
+	8800 2550 8800 2600
+Wire Wire Line
+	2700 6850 2700 6800
+$Comp
+L ISP1807-LR-RS:ISP1807-LR-RS IC1
+U 1 1 601E6B9F
+P 1550 1400
+F 0 "IC1" H 2750 1700 50  0000 C CNN
+F 1 "ISP1807-LR-RS" H 2750 1600 50  0000 C CNN
+F 2 "ISP1807:ISP1807LRRS" H 3700 1500 50  0001 L CNN
+F 3 "https://www.insightsip.com/fichiers_insightsip/pdf/ble/ISP1807/isp_ble_DS1807.pdf" H 3700 1400 50  0001 L CNN
+F 4 "RX TXRX MODULE BT TRC ANT SMD" H 3700 1300 50  0001 L CNN "Description"
+F 5 "1" H 3700 1200 50  0001 L CNN "Height"
+F 6 "Insight SIP" H 3700 1100 50  0001 L CNN "Manufacturer_Name"
+F 7 "ISP1807-LR-RS" H 3700 1000 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "359-ISP1807-LR-RS" H 3700 900 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Insight-SiP/ISP1807-LR-RS?qs=PqoDHHvF649jBaTuCZQSOQ%3D%3D" H 3700 800 50  0001 L CNN "Mouser Price/Stock"
+F 10 "" H 3700 700 50  0001 L CNN "Arrow Part Number"
+F 11 "" H 3700 600 50  0001 L CNN "Arrow Price/Stock"
+	1    1550 1400
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
