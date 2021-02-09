@@ -1,0 +1,29 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#SamacSys ECAD Model VEML6030
+#/332758/130768/2.48/6/4/Integrated Circuit
+DEF VEML6030 IC 0 30 Y Y 1 F N
+F0 "IC" 850 300 50 H V L CNN
+F1 "VEML6030" 850 200 50 H V L CNN
+F2 "VEML6030" 850 100 50 H I L CNN
+F3 "https://www.vishay.com/docs/84366/veml6030.pdf" 850 0 50 H I L CNN
+F4 "VEML6030 Vishay, Ambient Light Sensor, Ambient Light to Digital Data I2C 6-Pin" 850 -100 50 H I L CNN "Description"
+F5 "0.87" 850 -200 50 H I L CNN "Height"
+F6 "Vishay" 850 -300 50 H I L CNN "Manufacturer_Name"
+F7 "VEML6030" 850 -400 50 H I L CNN "Manufacturer_Part_Number"
+F8 "78-VEML6030" 850 -500 50 H I L CNN "Mouser Part Number"
+F9 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/VEML6030/?qs=oeTp6q%252Bm7GMZCCnCKRrv4g%3D%3D" 850 -600 50 H I L CNN "Mouser Price/Stock"
+F10 "VEML6030" 850 -700 50 H I L CNN "Arrow Part Number"
+F11 "https://www.arrow.com/en/products/veml6030/vishay" 850 -800 50 H I L CNN "Arrow Price/Stock"
+DRAW
+X GND 1 0 0 200 R 50 50 0 0 P
+X SDA 2 0 -100 200 R 50 50 0 0 P
+X INT 3 0 -200 200 R 50 50 0 0 P
+X ADD 4 1000 -200 200 L 50 50 0 0 P
+X SCL 5 1000 -100 200 L 50 50 0 0 P
+X VDD 6 1000 0 200 L 50 50 0 0 P
+P 5 0 1 6 200 100 800 100 800 -300 200 -300 200 100 N
+ENDDRAW
+ENDDEF
+#
+#End Library

@@ -73,36 +73,6 @@ SCL
 Text Label 4400 2500 2    50   ~ 0
 SDA
 $Comp
-L Sensor:BME280 U1
-U 1 1 60202494
-P 8700 1950
-F 0 "U1" H 8271 1996 50  0000 R CNN
-F 1 "BME280" H 8271 1905 50  0000 R CNN
-F 2 "Package_LGA:Bosch_LGA-8_2.5x2.5mm_P0.65mm_ClockwisePinNumbering" H 10200 1500 50  0001 C CNN
-F 3 "https://ae-bst.resource.bosch.com/media/_tech/media/datasheets/BST-BME280-DS002.pdf" H 8700 1750 50  0001 C CNN
-	1    8700 1950
-	1    0    0    -1  
-$EndComp
-$Comp
-L MAX44009EDT+T:MAX44009EDT+T IC2
-U 1 1 602029D2
-P 8750 4900
-F 0 "IC2" H 9350 5165 50  0000 C CNN
-F 1 "MAX44009EDT+T" H 9350 5074 50  0000 C CNN
-F 2 "MAX44009EDT+T:SON65P200X200X65-7N-D" H 9800 5000 50  0001 L CNN
-F 3 "https://componentsearchengine.com/Datasheets/2/MAX44009EDT+T.pdf" H 9800 4900 50  0001 L CNN
-F 4 "Ambient Light Sensor with ADC OTDFN6 Maxim MAX44009EDT+T, Light Sensor IC, Light to Serial I2C 1.7  3.6 V 6-Pin UTDFN" H 9800 4800 50  0001 L CNN "Description"
-F 5 "0.65" H 9800 4700 50  0001 L CNN "Height"
-F 6 "Maxim Integrated" H 9800 4600 50  0001 L CNN "Manufacturer_Name"
-F 7 "MAX44009EDT+T" H 9800 4500 50  0001 L CNN "Manufacturer_Part_Number"
-F 8 "700-MAX44009EDT+T" H 9800 4400 50  0001 L CNN "Mouser Part Number"
-F 9 "https://www.mouser.com/Search/Refine.aspx?Keyword=700-MAX44009EDT%2BT" H 9800 4300 50  0001 L CNN "Mouser Price/Stock"
-F 10 "" H 9800 4200 50  0001 L CNN "Arrow Part Number"
-F 11 "" H 9800 4100 50  0001 L CNN "Arrow Price/Stock"
-	1    8750 4900
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:Battery_Cell BT1
 U 1 1 60204F7A
 P 6400 1250
@@ -114,97 +84,11 @@ F 3 "~" V 6400 1310 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 $Comp
-L power:GND #PWR0102
-U 1 1 6020BA24
-P 8600 2600
-F 0 "#PWR0102" H 8600 2350 50  0001 C CNN
-F 1 "GND" H 8605 2427 50  0000 C CNN
-F 2 "" H 8600 2600 50  0001 C CNN
-F 3 "" H 8600 2600 50  0001 C CNN
-	1    8600 2600
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0103
-U 1 1 6020C669
-P 8800 2600
-F 0 "#PWR0103" H 8800 2350 50  0001 C CNN
-F 1 "GND" H 8805 2427 50  0000 C CNN
-F 2 "" H 8800 2600 50  0001 C CNN
-F 3 "" H 8800 2600 50  0001 C CNN
-	1    8800 2600
-	1    0    0    -1  
-$EndComp
-Text Label 7950 1300 0    50   ~ 0
-BME280_VCC
-Wire Wire Line
-	8600 1350 8600 1300
-Wire Wire Line
-	8800 1350 8800 1300
-Connection ~ 8600 1300
-$Comp
-L Device:C_Small C5
-U 1 1 60210C2A
-P 9900 1400
-F 0 "C5" H 9992 1446 50  0000 L CNN
-F 1 "0.1uF" H 9992 1355 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 9900 1400 50  0001 C CNN
-F 3 "~" H 9900 1400 50  0001 C CNN
-	1    9900 1400
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C6
-U 1 1 60211B12
-P 10300 1400
-F 0 "C6" H 10392 1446 50  0000 L CNN
-F 1 "0.1uF" H 10392 1355 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 10300 1400 50  0001 C CNN
-F 3 "~" H 10300 1400 50  0001 C CNN
-	1    10300 1400
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0104
-U 1 1 60212517
-P 10300 1700
-F 0 "#PWR0104" H 10300 1450 50  0001 C CNN
-F 1 "GND" H 10305 1527 50  0000 C CNN
-F 2 "" H 10300 1700 50  0001 C CNN
-F 3 "" H 10300 1700 50  0001 C CNN
-	1    10300 1700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8600 1300 8700 1300
-Wire Wire Line
-	8800 1300 9600 1300
-Connection ~ 8800 1300
-Connection ~ 9900 1300
-Wire Wire Line
-	9900 1300 10300 1300
-Text Label 9500 1850 2    50   ~ 0
-SCL
-Wire Wire Line
-	10300 1650 10300 1700
-Wire Wire Line
-	9300 1650 9900 1650
-Wire Wire Line
-	9900 1500 9900 1650
-Connection ~ 9900 1650
-Wire Wire Line
-	9900 1650 10300 1650
-Wire Wire Line
-	10300 1500 10300 1650
-Connection ~ 10300 1650
-Text Label 9500 2050 2    50   ~ 0
-SDA
-$Comp
 L Device:R_Small R1
 U 1 1 6022ADAE
 P 6250 4900
 F 0 "R1" V 6054 4900 50  0000 C CNN
-F 1 "10k" V 6145 4900 50  0000 C CNN
+F 1 "4.7k" V 6145 4900 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" H 6250 4900 50  0001 C CNN
 F 3 "~" H 6250 4900 50  0001 C CNN
 	1    6250 4900
@@ -215,16 +99,12 @@ L Device:R_Small R2
 U 1 1 6022BFE2
 P 6250 5200
 F 0 "R2" V 6054 5200 50  0000 C CNN
-F 1 "10k" V 6145 5200 50  0000 C CNN
+F 1 "4.7k" V 6145 5200 50  0000 C CNN
 F 2 "Resistor_SMD:R_0603_1608Metric" H 6250 5200 50  0001 C CNN
 F 3 "~" H 6250 5200 50  0001 C CNN
 	1    6250 5200
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	9500 1850 9300 1850
-Wire Wire Line
-	9500 2050 9300 2050
 Text Label 5900 4900 0    50   ~ 0
 SCL
 Text Label 5900 5200 0    50   ~ 0
@@ -241,42 +121,10 @@ Wire Wire Line
 	6350 5200 6600 5200
 Wire Wire Line
 	6600 4900 6350 4900
-Text Label 7550 4900 0    50   ~ 0
-MAX44_VCC
-$Comp
-L power:GND #PWR0105
-U 1 1 60246C23
-P 8550 5250
-F 0 "#PWR0105" H 8550 5000 50  0001 C CNN
-F 1 "GND" H 8555 5077 50  0000 C CNN
-F 2 "" H 8550 5250 50  0001 C CNN
-F 3 "" H 8550 5250 50  0001 C CNN
-	1    8550 5250
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8750 5000 8550 5000
-Wire Wire Line
-	8550 5000 8550 5100
-Wire Wire Line
-	8750 5100 8550 5100
-Connection ~ 8550 5100
-Wire Wire Line
-	8550 5100 8550 5250
-Text Label 10250 5000 2    50   ~ 0
-SCL
-Text Label 10250 4900 2    50   ~ 0
-SDA
-Wire Wire Line
-	10250 4900 9950 4900
-Wire Wire Line
-	10250 5000 9950 5000
-Text Label 10250 5100 2    50   ~ 0
-~INT1
-Wire Wire Line
-	10250 5100 9950 5100
+Text Label 11050 4850 2    50   ~ 0
+SENS2_VCC
 Text Label 5900 5450 0    50   ~ 0
-~INT1
+INT1
 $Comp
 L Device:R_Small R3
 U 1 1 6025C6F1
@@ -294,23 +142,10 @@ Wire Wire Line
 	6600 5450 6350 5450
 Wire Wire Line
 	6150 5450 5900 5450
-$Comp
-L power:GND #PWR0106
-U 1 1 602629B5
-P 9350 5600
-F 0 "#PWR0106" H 9350 5350 50  0001 C CNN
-F 1 "GND" H 9355 5427 50  0000 C CNN
-F 2 "" H 9350 5600 50  0001 C CNN
-F 3 "" H 9350 5600 50  0001 C CNN
-	1    9350 5600
-	1    0    0    -1  
-$EndComp
-Text Notes 10200 5750 0    50   ~ 0
-1001010x
-Text Notes 9500 2600 0    50   ~ 0
-I2C Address: 0x76
-Text Notes 9850 5650 0    50   ~ 0
-I2C Address: 0x4A
+Text Notes 9450 2600 0    50   ~ 0
+I2C Address Pressure + Temp: 0x76
+Text Notes 8700 5300 0    50   ~ 0
+I2C Address: 0x48
 $Comp
 L Device:C_Small C1
 U 1 1 60266A56
@@ -431,33 +266,6 @@ Wire Wire Line
 	6650 1250 6500 1250
 Text Label 5350 1250 0    50   ~ 0
 VCC
-$Comp
-L Device:C_Small C8
-U 1 1 602BB820
-P 8150 5050
-F 0 "C8" H 8242 5096 50  0000 L CNN
-F 1 "1uF" H 8242 5005 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 8150 5050 50  0001 C CNN
-F 3 "~" H 8150 5050 50  0001 C CNN
-	1    8150 5050
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0112
-U 1 1 602BCCE7
-P 8150 5150
-F 0 "#PWR0112" H 8150 4900 50  0001 C CNN
-F 1 "GND" H 8155 4977 50  0000 C CNN
-F 2 "" H 8150 5150 50  0001 C CNN
-F 3 "" H 8150 5150 50  0001 C CNN
-	1    8150 5150
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	8150 4950 8150 4900
-Connection ~ 8150 4900
-Wire Wire Line
-	8150 4900 8450 4900
 NoConn ~ 3850 1500
 NoConn ~ 3850 1700
 NoConn ~ 3850 1800
@@ -658,72 +466,36 @@ Wire Wire Line
 Wire Wire Line
 	5350 3350 5600 3350
 Wire Wire Line
-	7950 1300 8500 1300
-Wire Wire Line
 	4200 3600 3850 3600
 Wire Wire Line
 	4200 3800 3850 3800
 Text Label 4400 4000 2    50   ~ 0
-MAX44_VCC
+SENS2_VCC
 Text Label 4400 4200 2    50   ~ 0
-BME280_VCC
+SENS1_VCC
 Wire Wire Line
 	3850 4200 4400 4200
 Wire Wire Line
 	3850 4000 4400 4000
 $Comp
-L Device:Jumper_NC_Small JP2
-U 1 1 6023FE8E
-P 8250 1050
-F 0 "JP2" H 8250 1262 50  0000 C CNN
-F 1 "Jumper_NC_Small" H 8250 1171 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 8250 1050 50  0001 C CNN
-F 3 "~" H 8250 1050 50  0001 C CNN
-	1    8250 1050
-	1    0    0    -1  
-$EndComp
-$Comp
 L Device:Jumper_NC_Small JP1
 U 1 1 60240E97
-P 7900 4650
-F 0 "JP1" H 7900 4862 50  0000 C CNN
-F 1 "Jumper_NC_Small" H 7900 4771 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 7900 4650 50  0001 C CNN
-F 3 "~" H 7900 4650 50  0001 C CNN
-	1    7900 4650
-	1    0    0    -1  
+P 10700 5100
+F 0 "JP1" H 10700 5312 50  0000 C CNN
+F 1 "Jumper_NC_Small" H 10700 5221 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 10700 5100 50  0001 C CNN
+F 3 "~" H 10700 5100 50  0001 C CNN
+	1    10700 5100
+	-1   0    0    1   
 $EndComp
-Text Label 7550 4650 0    50   ~ 0
+Text Label 11050 5100 2    50   ~ 0
 VCC
 Wire Wire Line
-	7550 4650 7800 4650
+	11050 5100 10800 5100
 Wire Wire Line
-	7550 4900 8050 4900
+	11050 4850 10550 4850
 Wire Wire Line
-	8000 4650 8050 4650
-Wire Wire Line
-	8050 4650 8050 4900
-Connection ~ 8050 4900
-Wire Wire Line
-	8050 4900 8150 4900
-Text Label 7950 1050 0    50   ~ 0
-VCC
-Wire Wire Line
-	7950 1050 8150 1050
-Wire Wire Line
-	8350 1050 8500 1050
-Wire Wire Line
-	8500 1050 8500 1300
-Connection ~ 8500 1300
-Wire Wire Line
-	8500 1300 8600 1300
-Wire Wire Line
-	9600 2250 9600 1300
-Wire Wire Line
-	9300 2250 9600 2250
-Connection ~ 9600 1300
-Wire Wire Line
-	9600 1300 9900 1300
+	10600 5100 10550 5100
 Text Label 5800 6550 2    50   ~ 0
 SWDIO
 Text Label 5800 6450 2    50   ~ 0
@@ -785,9 +557,9 @@ Wire Notes Line
 Text Notes 4750 650  0    50   ~ 0
 Battery Input
 Text Notes 7450 650  0    50   ~ 0
-BME280 Humid, Temp, Presure
+Humid, Temp, Pressure
 Text Notes 7450 3650 0    50   ~ 0
-MAX44009 Light Sensor
+Light Sensor
 Text Notes 4750 2250 0    50   ~ 0
 Button
 Text Notes 4750 4150 0    50   ~ 0
@@ -833,38 +605,6 @@ $EndComp
 Connection ~ 2050 950 
 Wire Wire Line
 	2050 950  2350 950 
-$Comp
-L power:PWR_FLAG #FLG0102
-U 1 1 602A143F
-P 8450 4900
-F 0 "#FLG0102" H 8450 4975 50  0001 C CNN
-F 1 "PWR_FLAG" H 8450 5073 50  0000 C CNN
-F 2 "" H 8450 4900 50  0001 C CNN
-F 3 "~" H 8450 4900 50  0001 C CNN
-	1    8450 4900
-	1    0    0    -1  
-$EndComp
-Connection ~ 8450 4900
-Wire Wire Line
-	8450 4900 8750 4900
-$Comp
-L power:PWR_FLAG #FLG0103
-U 1 1 602A1E76
-P 8700 1300
-F 0 "#FLG0103" H 8700 1375 50  0001 C CNN
-F 1 "PWR_FLAG" H 8700 1473 50  0000 C CNN
-F 2 "" H 8700 1300 50  0001 C CNN
-F 3 "~" H 8700 1300 50  0001 C CNN
-	1    8700 1300
-	1    0    0    -1  
-$EndComp
-Connection ~ 8700 1300
-Wire Wire Line
-	8700 1300 8800 1300
-Wire Wire Line
-	8600 2550 8600 2600
-Wire Wire Line
-	8800 2550 8800 2600
 Wire Wire Line
 	2700 6850 2700 6800
 $Comp
@@ -886,4 +626,232 @@ F 11 "" H 3700 600 50  0001 L CNN "Arrow Price/Stock"
 	1    1550 1400
 	1    0    0    -1  
 $EndComp
+$Comp
+L VEML6030:VEML6030 IC2
+U 1 1 6023279F
+P 8150 4850
+F 0 "IC2" H 8650 5115 50  0000 C CNN
+F 1 "VEML6030" H 8650 5024 50  0000 C CNN
+F 2 "VEML6030:VEML6030" H 9000 4950 50  0001 L CNN
+F 3 "https://www.vishay.com/docs/84366/veml6030.pdf" H 9000 4850 50  0001 L CNN
+F 4 "VEML6030 Vishay, Ambient Light Sensor, Ambient Light to Digital Data I2C 6-Pin" H 9000 4750 50  0001 L CNN "Description"
+F 5 "0.87" H 9000 4650 50  0001 L CNN "Height"
+F 6 "Vishay" H 9000 4550 50  0001 L CNN "Manufacturer_Name"
+F 7 "VEML6030" H 9000 4450 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "78-VEML6030" H 9000 4350 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/VEML6030/?qs=oeTp6q%252Bm7GMZCCnCKRrv4g%3D%3D" H 9000 4250 50  0001 L CNN "Mouser Price/Stock"
+F 10 "VEML6030" H 9000 4150 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/veml6030/vishay" H 9000 4050 50  0001 L CNN "Arrow Price/Stock"
+	1    8150 4850
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	10550 5100 10550 4850
+Text Label 7800 5050 0    50   ~ 0
+INT1
+Wire Wire Line
+	8150 5050 7800 5050
+Text Label 7800 4950 0    50   ~ 0
+SDA
+Text Label 9350 4950 2    50   ~ 0
+SCL
+Wire Wire Line
+	9150 4950 9350 4950
+$Comp
+L Device:C_Small C8
+U 1 1 6025B296
+P 10150 4950
+F 0 "C8" H 10242 4996 50  0000 L CNN
+F 1 "0.1uF" H 10242 4905 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 10150 4950 50  0001 C CNN
+F 3 "~" H 10150 4950 50  0001 C CNN
+	1    10150 4950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C6
+U 1 1 6025BDDE
+P 9800 4950
+F 0 "C6" H 9892 4996 50  0000 L CNN
+F 1 "10uF" H 9892 4905 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 9800 4950 50  0001 C CNN
+F 3 "~" H 9800 4950 50  0001 C CNN
+	1    9800 4950
+	1    0    0    -1  
+$EndComp
+Connection ~ 10550 4850
+Wire Wire Line
+	9800 4850 10150 4850
+Connection ~ 10150 4850
+Wire Wire Line
+	10150 4850 10550 4850
+$Comp
+L power:GND #PWR0102
+U 1 1 60266946
+P 9800 5100
+F 0 "#PWR0102" H 9800 4850 50  0001 C CNN
+F 1 "GND" H 9805 4927 50  0000 C CNN
+F 2 "" H 9800 5100 50  0001 C CNN
+F 3 "" H 9800 5100 50  0001 C CNN
+	1    9800 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0103
+U 1 1 60266FC1
+P 10150 5100
+F 0 "#PWR0103" H 10150 4850 50  0001 C CNN
+F 1 "GND" H 10155 4927 50  0000 C CNN
+F 2 "" H 10150 5100 50  0001 C CNN
+F 3 "" H 10150 5100 50  0001 C CNN
+	1    10150 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR0104
+U 1 1 6026727A
+P 7600 4900
+F 0 "#PWR0104" H 7600 4650 50  0001 C CNN
+F 1 "GND" H 7605 4727 50  0000 C CNN
+F 2 "" H 7600 4900 50  0001 C CNN
+F 3 "" H 7600 4900 50  0001 C CNN
+	1    7600 4900
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	7800 4950 8150 4950
+Wire Wire Line
+	8150 4850 7600 4850
+Wire Wire Line
+	7600 4850 7600 4900
+Wire Wire Line
+	9800 5100 9800 5050
+Wire Wire Line
+	10150 5100 10150 5050
+$Comp
+L Device:R_Small R5
+U 1 1 60278CF3
+P 9600 4850
+F 0 "R5" V 9404 4850 50  0000 C CNN
+F 1 "10R" V 9495 4850 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 9600 4850 50  0001 C CNN
+F 3 "~" H 9600 4850 50  0001 C CNN
+	1    9600 4850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	9150 4850 9400 4850
+Wire Wire Line
+	9150 5050 9400 5050
+Wire Wire Line
+	9400 5050 9400 4850
+Wire Wire Line
+	9500 4850 9400 4850
+Connection ~ 9400 4850
+Wire Wire Line
+	9700 4850 9800 4850
+Connection ~ 9800 4850
+Wire Wire Line
+	7700 1700 7900 1700
+Text Label 7700 1700 0    50   ~ 0
+VCC
+$Comp
+L Device:Jumper_NC_Small JP2
+U 1 1 6023FE8E
+P 8000 1700
+F 0 "JP2" H 8000 1912 50  0000 C CNN
+F 1 "Jumper_NC_Small" H 8000 1821 50  0000 C CNN
+F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 8000 1700 50  0001 C CNN
+F 3 "~" H 8000 1700 50  0001 C CNN
+	1    8000 1700
+	1    0    0    -1  
+$EndComp
+Text Label 7700 1950 0    50   ~ 0
+SENS1_VCC
+$Comp
+L MS860702BA01-50:MS860702BA01-50 IC3
+U 1 1 6029E7F5
+P 9350 1800
+F 0 "IC3" H 9900 2065 50  0000 C CNN
+F 1 "MS860702BA01-50" H 9900 1974 50  0000 C CNN
+F 2 "MS860702BA01-50:SON125P300X500X100-8N" H 10300 1900 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/1/MS860702BA01-50.pdf" H 10300 1800 50  0001 L CNN
+F 4 "SENSOR SOLUTIONS - TE CONNECTIVITY - MS860702BA01-50 - PRESSURE SENSOR, 10MBAR-29PSI, QFN-8" H 10300 1700 50  0001 L CNN "Description"
+F 5 "1" H 10300 1600 50  0001 L CNN "Height"
+F 6 "TE Connectivity" H 10300 1500 50  0001 L CNN "Manufacturer_Name"
+F 7 "MS860702BA01-50" H 10300 1400 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "824-MS860702BA01-50" H 10300 1300 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Measurement-Specialties/MS860702BA01-50?qs=lU3n7Z6pAZJebVoKdr5RAw%3D%3D" H 10300 1200 50  0001 L CNN "Mouser Price/Stock"
+F 10 "MS860702BA01-50" H 10300 1100 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/ms860702ba01-50/te-connectivity" H 10300 1000 50  0001 L CNN "Arrow Price/Stock"
+	1    9350 1800
+	1    0    0    -1  
+$EndComp
+NoConn ~ 9350 2100
+NoConn ~ 9350 1900
+NoConn ~ 10450 2100
+NoConn ~ 10450 2000
+Text Label 10700 1800 2    50   ~ 0
+SCL
+Text Label 10700 1900 2    50   ~ 0
+SDA
+Wire Wire Line
+	10450 1800 10700 1800
+Wire Wire Line
+	10450 1900 10700 1900
+$Comp
+L Device:C_Small C5
+U 1 1 602B5245
+P 8450 2000
+F 0 "C5" H 8542 2046 50  0000 L CNN
+F 1 "0.22uF" H 8542 1955 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 8450 2000 50  0001 C CNN
+F 3 "~" H 8450 2000 50  0001 C CNN
+	1    8450 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8300 1700 8300 1800
+Wire Wire Line
+	8100 1700 8300 1700
+Wire Wire Line
+	7700 1950 8300 1950
+Connection ~ 8300 1800
+Wire Wire Line
+	8300 1800 8300 1950
+$Comp
+L power:GND #PWR0105
+U 1 1 602BEB9E
+P 8450 2100
+F 0 "#PWR0105" H 8450 1850 50  0001 C CNN
+F 1 "GND" H 8455 1927 50  0000 C CNN
+F 2 "" H 8450 2100 50  0001 C CNN
+F 3 "" H 8450 2100 50  0001 C CNN
+	1    8450 2100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	8300 1800 8450 1800
+Wire Wire Line
+	8450 1900 8450 1800
+Connection ~ 8450 1800
+$Comp
+L power:GND #PWR0106
+U 1 1 602C82EE
+P 9100 2200
+F 0 "#PWR0106" H 9100 1950 50  0001 C CNN
+F 1 "GND" H 9105 2027 50  0000 C CNN
+F 2 "" H 9100 2200 50  0001 C CNN
+F 3 "" H 9100 2200 50  0001 C CNN
+	1    9100 2200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9350 2000 9100 2000
+Wire Wire Line
+	9100 2000 9100 2200
+Text Notes 9450 2700 0    50   ~ 0
+I2C Address Relative Humidity: 0x40
+Wire Wire Line
+	8450 1800 9350 1800
 $EndSCHEMATC
