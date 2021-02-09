@@ -13,64 +13,33 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Comp
-L power:GND #PWR0101
-U 1 1 6021B8C4
-P 2700 6850
-F 0 "#PWR0101" H 2700 6600 50  0001 C CNN
-F 1 "GND" H 2705 6677 50  0000 C CNN
-F 2 "" H 2700 6850 50  0001 C CNN
-F 3 "" H 2700 6850 50  0001 C CNN
-	1    2700 6850
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2350 950  2350 1050
-Text Label 1200 1800 0    50   ~ 0
-VBUS
-Text Label 1200 1900 0    50   ~ 0
+Text Label 1450 2450 0    50   ~ 0
 D+
-Text Label 1200 2000 0    50   ~ 0
+Text Label 1450 2550 0    50   ~ 0
 D-
-Wire Wire Line
-	1200 1800 1550 1800
-Wire Wire Line
-	1550 1900 1200 1900
-Wire Wire Line
-	1200 2000 1550 2000
-Text Label 4400 1400 2    50   ~ 0
+Text Label 3550 2950 2    50   ~ 0
 NFC1
-Text Label 4400 1600 2    50   ~ 0
-NFC2
 Wire Wire Line
-	3850 6250 3950 6250
-Wire Wire Line
-	3950 6250 3950 6150
-Wire Wire Line
-	3950 6150 3850 6150
-Wire Wire Line
-	3850 1600 4400 1600
-Wire Wire Line
-	3850 1400 4400 1400
-Text Label 1100 3100 0    50   ~ 0
+	3000 2950 3550 2950
+Text Label 1450 2200 0    50   ~ 0
 SWDIO
-Text Label 1100 3200 0    50   ~ 0
+Text Label 1450 2100 0    50   ~ 0
 SWDCLK
-Text Label 1100 2600 0    50   ~ 0
+Text Label 3450 3450 2    50   ~ 0
 RESET
 Wire Wire Line
-	1550 2600 1100 2600
+	3000 3450 3450 3450
 Wire Wire Line
-	1550 3100 1100 3100
+	1900 2200 1450 2200
 Wire Wire Line
-	1100 3200 1550 3200
+	1450 2100 1900 2100
 Wire Wire Line
-	4400 2500 3850 2500
+	3550 1850 3000 1850
 Wire Wire Line
-	3850 2400 4400 2400
-Text Label 4400 2400 2    50   ~ 0
+	3000 1750 3550 1750
+Text Label 3550 1750 2    50   ~ 0
 SCL
-Text Label 4400 2500 2    50   ~ 0
+Text Label 3550 1850 2    50   ~ 0
 SDA
 $Comp
 L Device:Battery_Cell BT1
@@ -121,7 +90,7 @@ Wire Wire Line
 	6350 5200 6600 5200
 Wire Wire Line
 	6600 4900 6350 4900
-Text Label 11050 4850 2    50   ~ 0
+Text Label 11100 4500 2    50   ~ 0
 SENS2_VCC
 Text Label 5900 5450 0    50   ~ 0
 INT1
@@ -146,57 +115,6 @@ Text Notes 9450 2600 0    50   ~ 0
 I2C Address Pressure + Temp: 0x76
 Text Notes 8700 5300 0    50   ~ 0
 I2C Address: 0x48
-$Comp
-L Device:C_Small C1
-U 1 1 60266A56
-P 950 1050
-F 0 "C1" H 1042 1096 50  0000 L CNN
-F 1 "10uF" H 1042 1005 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 950 1050 50  0001 C CNN
-F 3 "~" H 950 1050 50  0001 C CNN
-	1    950  1050
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C2
-U 1 1 60266F44
-P 1400 1050
-F 0 "C2" H 1492 1096 50  0000 L CNN
-F 1 "0.1uF" H 1492 1005 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 1400 1050 50  0001 C CNN
-F 3 "~" H 1400 1050 50  0001 C CNN
-	1    1400 1050
-	1    0    0    -1  
-$EndComp
-Text Label 700  950  0    50   ~ 0
-VCC
-Wire Wire Line
-	700  950  950  950 
-Connection ~ 950  950 
-Wire Wire Line
-	950  950  1400 950 
-$Comp
-L power:GND #PWR0107
-U 1 1 6026F82A
-P 950 1150
-F 0 "#PWR0107" H 950 900 50  0001 C CNN
-F 1 "GND" H 955 977 50  0000 C CNN
-F 2 "" H 950 1150 50  0001 C CNN
-F 3 "" H 950 1150 50  0001 C CNN
-	1    950  1150
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0108
-U 1 1 602704D1
-P 1400 1150
-F 0 "#PWR0108" H 1400 900 50  0001 C CNN
-F 1 "GND" H 1405 977 50  0000 C CNN
-F 2 "" H 1400 1150 50  0001 C CNN
-F 3 "" H 1400 1150 50  0001 C CNN
-	1    1400 1150
-	1    0    0    -1  
-$EndComp
 $Comp
 L Device:C_Small C3
 U 1 1 60277C20
@@ -266,43 +184,8 @@ Wire Wire Line
 	6650 1250 6500 1250
 Text Label 5350 1250 0    50   ~ 0
 VCC
-NoConn ~ 3850 1500
-NoConn ~ 3850 1700
-NoConn ~ 3850 1800
-NoConn ~ 3850 1900
-NoConn ~ 3850 2000
-NoConn ~ 3850 2100
-NoConn ~ 3850 2200
-NoConn ~ 3850 2300
-NoConn ~ 3850 2700
-NoConn ~ 3850 2900
-NoConn ~ 3850 3000
-NoConn ~ 3850 3100
-NoConn ~ 3850 3200
-NoConn ~ 3850 3300
-NoConn ~ 3850 3400
-NoConn ~ 3850 3500
-NoConn ~ 3850 3700
-NoConn ~ 3850 3900
-NoConn ~ 3850 4100
-NoConn ~ 3850 4300
-NoConn ~ 3850 4400
-NoConn ~ 3850 4500
-NoConn ~ 3850 4600
-NoConn ~ 3850 4700
-NoConn ~ 3850 4800
-NoConn ~ 3850 4900
-NoConn ~ 3850 5000
-NoConn ~ 3850 5100
-NoConn ~ 3850 5200
-NoConn ~ 3850 5300
-NoConn ~ 3850 5400
-NoConn ~ 3850 5500
-NoConn ~ 3850 5600
-NoConn ~ 3850 5700
-NoConn ~ 3850 5800
-Text Label 4200 3800 2    50   ~ 0
-~INT1
+Text Label 3550 2750 2    50   ~ 0
+INT1
 $Comp
 L EVQ-PUA02K:EVQ-PUA02K S1
 U 1 1 602F21F2
@@ -455,7 +338,7 @@ F 3 "" H 5450 4850 50  0001 C CNN
 	1    5450 4850
 	1    0    0    -1  
 $EndComp
-Text Label 4200 3600 2    50   ~ 0
+Text Label 3550 2650 2    50   ~ 0
 BTN
 Text Label 7050 3350 2    50   ~ 0
 BTN
@@ -465,37 +348,16 @@ Wire Wire Line
 	7050 3350 6800 3350
 Wire Wire Line
 	5350 3350 5600 3350
-Wire Wire Line
-	4200 3600 3850 3600
-Wire Wire Line
-	4200 3800 3850 3800
-Text Label 4400 4000 2    50   ~ 0
+Text Label 3550 3050 2    50   ~ 0
 SENS2_VCC
-Text Label 4400 4200 2    50   ~ 0
+Text Label 3550 2150 2    50   ~ 0
 SENS1_VCC
 Wire Wire Line
-	3850 4200 4400 4200
+	3000 2150 3550 2150
 Wire Wire Line
-	3850 4000 4400 4000
-$Comp
-L Device:Jumper_NC_Small JP1
-U 1 1 60240E97
-P 10700 5100
-F 0 "JP1" H 10700 5312 50  0000 C CNN
-F 1 "Jumper_NC_Small" H 10700 5221 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 10700 5100 50  0001 C CNN
-F 3 "~" H 10700 5100 50  0001 C CNN
-	1    10700 5100
-	-1   0    0    1   
-$EndComp
-Text Label 11050 5100 2    50   ~ 0
+	3000 3050 3550 3050
+Text Label 11050 5250 2    50   ~ 0
 VCC
-Wire Wire Line
-	11050 5100 10800 5100
-Wire Wire Line
-	11050 4850 10550 4850
-Wire Wire Line
-	10600 5100 10550 5100
 Text Label 5800 6550 2    50   ~ 0
 SWDIO
 Text Label 5800 6450 2    50   ~ 0
@@ -531,17 +393,14 @@ Wire Wire Line
 	5800 6950 5400 6950
 Wire Wire Line
 	5800 7050 5400 7050
-Text Label 4400 2600 2    50   ~ 0
+Text Label 3550 1950 2    50   ~ 0
 Rx
-Text Label 4400 2800 2    50   ~ 0
+Text Label 3550 2050 2    50   ~ 0
 Tx
 Wire Wire Line
-	4400 2600 3850 2600
+	3550 1950 3000 1950
 Wire Wire Line
-	4400 2800 3850 2800
-Wire Wire Line
-	1400 950  2050 950 
-Connection ~ 1400 950 
+	3550 2050 3000 2050
 Wire Notes Line
 	7350 500  7350 6500
 Wire Notes Line
@@ -567,7 +426,7 @@ Pull-Ups
 Text Notes 4750 5950 0    50   ~ 0
 Debug
 Text Notes 600  650  0    50   ~ 0
-ISP1807 (nRF52) µC
+nRF52840 µC
 $Comp
 L Connector:Conn_01x07_Male J3
 U 1 1 6021CB85
@@ -586,46 +445,8 @@ Wire Wire Line
 Connection ~ 5500 6750
 Wire Wire Line
 	5500 6750 6000 6750
-NoConn ~ 4400 1400
-NoConn ~ 4400 1600
-NoConn ~ 1200 1800
-NoConn ~ 1200 1900
-NoConn ~ 1200 2000
-$Comp
-L power:PWR_FLAG #FLG0101
-U 1 1 6029FC8F
-P 2050 950
-F 0 "#FLG0101" H 2050 1025 50  0001 C CNN
-F 1 "PWR_FLAG" H 2050 1123 50  0000 C CNN
-F 2 "" H 2050 950 50  0001 C CNN
-F 3 "~" H 2050 950 50  0001 C CNN
-	1    2050 950 
-	1    0    0    -1  
-$EndComp
-Connection ~ 2050 950 
-Wire Wire Line
-	2050 950  2350 950 
-Wire Wire Line
-	2700 6850 2700 6800
-$Comp
-L ISP1807-LR-RS:ISP1807-LR-RS IC1
-U 1 1 601E6B9F
-P 1550 1400
-F 0 "IC1" H 2750 1700 50  0000 C CNN
-F 1 "ISP1807-LR-RS" H 2750 1600 50  0000 C CNN
-F 2 "ISP1807:ISP1807LRRS" H 3700 1500 50  0001 L CNN
-F 3 "https://www.insightsip.com/fichiers_insightsip/pdf/ble/ISP1807/isp_ble_DS1807.pdf" H 3700 1400 50  0001 L CNN
-F 4 "RX TXRX MODULE BT TRC ANT SMD" H 3700 1300 50  0001 L CNN "Description"
-F 5 "1" H 3700 1200 50  0001 L CNN "Height"
-F 6 "Insight SIP" H 3700 1100 50  0001 L CNN "Manufacturer_Name"
-F 7 "ISP1807-LR-RS" H 3700 1000 50  0001 L CNN "Manufacturer_Part_Number"
-F 8 "359-ISP1807-LR-RS" H 3700 900 50  0001 L CNN "Mouser Part Number"
-F 9 "https://www.mouser.co.uk/ProductDetail/Insight-SiP/ISP1807-LR-RS?qs=PqoDHHvF649jBaTuCZQSOQ%3D%3D" H 3700 800 50  0001 L CNN "Mouser Price/Stock"
-F 10 "" H 3700 700 50  0001 L CNN "Arrow Part Number"
-F 11 "" H 3700 600 50  0001 L CNN "Arrow Price/Stock"
-	1    1550 1400
-	1    0    0    -1  
-$EndComp
+NoConn ~ 3550 2950
+NoConn ~ 3550 2850
 $Comp
 L VEML6030:VEML6030 IC2
 U 1 1 6023279F
@@ -645,8 +466,6 @@ F 11 "https://www.arrow.com/en/products/veml6030/vishay" H 9000 4050 50  0001 L 
 	1    8150 4850
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	10550 5100 10550 4850
 Text Label 7800 5050 0    50   ~ 0
 INT1
 Wire Wire Line
@@ -679,12 +498,8 @@ F 3 "~" H 9800 4950 50  0001 C CNN
 	1    9800 4950
 	1    0    0    -1  
 $EndComp
-Connection ~ 10550 4850
 Wire Wire Line
 	9800 4850 10150 4850
-Connection ~ 10150 4850
-Wire Wire Line
-	10150 4850 10550 4850
 $Comp
 L power:GND #PWR0102
 U 1 1 60266946
@@ -751,22 +566,9 @@ Connection ~ 9400 4850
 Wire Wire Line
 	9700 4850 9800 4850
 Connection ~ 9800 4850
-Wire Wire Line
-	7700 1700 7900 1700
-Text Label 7700 1700 0    50   ~ 0
+Text Label 7600 1500 0    50   ~ 0
 VCC
-$Comp
-L Device:Jumper_NC_Small JP2
-U 1 1 6023FE8E
-P 8000 1700
-F 0 "JP2" H 8000 1912 50  0000 C CNN
-F 1 "Jumper_NC_Small" H 8000 1821 50  0000 C CNN
-F 2 "Jumper:SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm" H 8000 1700 50  0001 C CNN
-F 3 "~" H 8000 1700 50  0001 C CNN
-	1    8000 1700
-	1    0    0    -1  
-$EndComp
-Text Label 7700 1950 0    50   ~ 0
+Text Label 7600 2150 0    50   ~ 0
 SENS1_VCC
 $Comp
 L MS860702BA01-50:MS860702BA01-50 IC3
@@ -810,15 +612,6 @@ F 3 "~" H 8450 2000 50  0001 C CNN
 	1    8450 2000
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8300 1700 8300 1800
-Wire Wire Line
-	8100 1700 8300 1700
-Wire Wire Line
-	7700 1950 8300 1950
-Connection ~ 8300 1800
-Wire Wire Line
-	8300 1800 8300 1950
 $Comp
 L power:GND #PWR0105
 U 1 1 602BEB9E
@@ -854,4 +647,107 @@ Text Notes 9450 2700 0    50   ~ 0
 I2C Address Relative Humidity: 0x40
 Wire Wire Line
 	8450 1800 9350 1800
+$Comp
+L MS88SF2:MS88SF2 U1
+U 1 1 603424B5
+P 2450 1950
+F 0 "U1" H 2450 2465 50  0000 C CNN
+F 1 "MS88SF2" H 2450 2374 50  0000 C CNN
+F 2 "MS88SF2:MS88SF2" H 2450 2000 50  0001 C CNN
+F 3 "" H 2450 2000 50  0001 C CNN
+	1    2450 1950
+	1    0    0    -1  
+$EndComp
+Text Label 1450 1750 0    50   ~ 0
+VCC
+Text Label 1450 1850 0    50   ~ 0
+VCC
+Wire Wire Line
+	1900 1750 1450 1750
+Wire Wire Line
+	1900 1850 1450 1850
+Wire Wire Line
+	3000 2850 3550 2850
+Text Label 3550 2850 2    50   ~ 0
+NFC2
+Wire Wire Line
+	3000 2750 3550 2750
+Wire Wire Line
+	3000 2650 3550 2650
+Wire Wire Line
+	1450 2450 1900 2450
+Wire Wire Line
+	1450 2550 1900 2550
+$Comp
+L power:GND #PWR0101
+U 1 1 60382555
+P 2450 4200
+F 0 "#PWR0101" H 2450 3950 50  0001 C CNN
+F 1 "GND" H 2455 4027 50  0000 C CNN
+F 2 "" H 2450 4200 50  0001 C CNN
+F 3 "" H 2450 4200 50  0001 C CNN
+	1    2450 4200
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2400 4050 2400 4100
+Wire Wire Line
+	2400 4100 2450 4100
+Wire Wire Line
+	2500 4100 2500 4050
+Wire Wire Line
+	2450 4100 2450 4200
+Connection ~ 2450 4100
+Wire Wire Line
+	2450 4100 2500 4100
+NoConn ~ 3000 2550
+NoConn ~ 3000 3150
+NoConn ~ 3000 3250
+NoConn ~ 3000 3350
+NoConn ~ 3000 3550
+NoConn ~ 3000 3650
+$Comp
+L Jumper:SolderJumper_3_Bridged12 JP1
+U 1 1 603ADD74
+P 8150 1800
+F 0 "JP1" V 8196 1868 50  0000 L CNN
+F 1 "SolderJumper_3_Bridged12" V 8650 1400 50  0000 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm" H 8150 1800 50  0001 C CNN
+F 3 "~" H 8150 1800 50  0001 C CNN
+	1    8150 1800
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Jumper:SolderJumper_3_Bridged12 JP2
+U 1 1 603AE514
+P 10600 4850
+F 0 "JP2" V 10554 4918 50  0000 L CNN
+F 1 "SolderJumper_3_Bridged12" V 10050 4350 50  0000 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm" H 10600 4850 50  0001 C CNN
+F 3 "~" H 10600 4850 50  0001 C CNN
+	1    10600 4850
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	7600 2150 8150 2150
+Wire Wire Line
+	8150 2150 8150 2000
+Wire Wire Line
+	8150 1600 8150 1500
+Wire Wire Line
+	8150 1500 7600 1500
+Wire Wire Line
+	10450 4850 10150 4850
+Connection ~ 10150 4850
+Wire Wire Line
+	11100 4500 10600 4500
+Wire Wire Line
+	10600 4500 10600 4650
+Wire Wire Line
+	11050 5250 10600 5250
+Wire Wire Line
+	10600 5050 10600 5250
+NoConn ~ 3000 2450
+NoConn ~ 3000 2350
+NoConn ~ 3000 2250
 $EndSCHEMATC
