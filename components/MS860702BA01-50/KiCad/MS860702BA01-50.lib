@@ -1,0 +1,31 @@
+EESchema-LIBRARY Version 2.3
+#encoding utf-8
+#SamacSys ECAD Model MS860702BA01-50
+#/774586/130768/2.48/8/3/Integrated Circuit
+DEF MS860702BA01-50 IC 0 30 Y Y 1 F N
+F0 "IC" 950 300 50 H V L CNN
+F1 "MS860702BA01-50" 950 200 50 H V L CNN
+F2 "SON125P300X500X100-8N" 950 100 50 H I L CNN
+F3 "https://componentsearchengine.com/Datasheets/1/MS860702BA01-50.pdf" 950 0 50 H I L CNN
+F4 "SENSOR SOLUTIONS - TE CONNECTIVITY - MS860702BA01-50 - PRESSURE SENSOR, 10MBAR-29PSI, QFN-8" 950 -100 50 H I L CNN "Description"
+F5 "1" 950 -200 50 H I L CNN "Height"
+F6 "TE Connectivity" 950 -300 50 H I L CNN "Manufacturer_Name"
+F7 "MS860702BA01-50" 950 -400 50 H I L CNN "Manufacturer_Part_Number"
+F8 "824-MS860702BA01-50" 950 -500 50 H I L CNN "Mouser Part Number"
+F9 "https://www.mouser.co.uk/ProductDetail/Measurement-Specialties/MS860702BA01-50?qs=lU3n7Z6pAZJebVoKdr5RAw%3D%3D" 950 -600 50 H I L CNN "Mouser Price/Stock"
+F10 "MS860702BA01-50" 950 -700 50 H I L CNN "Arrow Part Number"
+F11 "https://www.arrow.com/en/products/ms860702ba01-50/te-connectivity" 950 -800 50 H I L CNN "Arrow Price/Stock"
+DRAW
+X VDD 1 0 0 200 R 50 50 0 0 P
+X NC_1 2 0 -100 200 R 50 50 0 0 P
+X GND 3 0 -200 200 R 50 50 0 0 P
+X NC_2 4 0 -300 200 R 50 50 0 0 P
+X SCL 8 1100 0 200 L 50 50 0 0 P
+X SDA 7 1100 -100 200 L 50 50 0 0 P
+X NC_4 6 1100 -200 200 L 50 50 0 0 P
+X NC_3 5 1100 -300 200 L 50 50 0 0 P
+P 5 0 1 6 200 100 900 100 900 -400 200 -400 200 100 N
+ENDDRAW
+ENDDEF
+#
+#End Library
