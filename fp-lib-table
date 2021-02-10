@@ -4,4 +4,7 @@
   (lib (name MAX44009EDT+T)(type Legacy)(uri ${KIPRJMOD}/components/MAX44009EDT+T/KiCad/MAX44009EDT+T.mod)(options "")(descr ""))
   (lib (name BA2032SM)(type Legacy)(uri ${KIPRJMOD}/components/BA2032SM/KiCad/BA2032SM.mod)(options "")(descr ""))
   (lib (name EVQ-PUA02K)(type Legacy)(uri ${KIPRJMOD}/components/EVQ-PUA02K/KiCad/EVQ-PUA02K.mod)(options "")(descr ""))
+  (lib (name VEML6030)(type Legacy)(uri ${KIPRJMOD}/components/VEML6030/KiCad/VEML6030.mod)(options "")(descr ""))
+  (lib (name MS860702BA01-50)(type Legacy)(uri ${KIPRJMOD}/components/MS860702BA01-50/KiCad/MS860702BA01-50.mod)(options "")(descr ""))
+  (lib (name MS88SF2)(type KiCad)(uri ${KIPRJMOD}/components/MS88SF2/MS88SF2.pretty)(options "")(descr ""))
 )

@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP VEML6030
+D VEML6030 Vishay, Ambient Light Sensor, Ambient Light to Digital Data I2C 6-Pin
+K
+F https://www.vishay.com/docs/84366/veml6030.pdf
+$ENDCMP
+#
+#End Doc Library
