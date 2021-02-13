@@ -39,25 +39,23 @@
  */
 /** @file
  *
- * @defgroup thread_mqttsn_sleepy_publisher_example_main main.c
+ * @defgroup thread_mqttsn_publisher_example_main main.c
  * @{
- * @ingroup thread_mqttsn_sleepy_publisher_example
- * @brief Thread MQTT-SN Sleepy Publisher Example Application main file.
+ * @ingroup thread_mqttsn_publisher_example
+ * @brief Thread MQTT-SN Client Publisher Example Application main file.
  *
- * @details This example demonstrates an MQTT-SN sleepy publisher application that enables to toggle
- *          BSP_LED_2 on a board with related MQTT-SN sleepy subscriber application via MQTT-SN messages.
- *          As the MQTT-SN sleepy publisher has no subscriptions, it will not need to receive data except
- *          for ACKs for its own messages, so asynchronous receiving is not needed. It therefore serves
- *          as a Thread Sleepy End Device.
+ * @details This example demonstrates an MQTT-SN client publisher application that enables to toggle
+ *          BSP_LED_2 on a board with related MQTT-SN client subscriber application via MQTT-SN messages.
+ *
  */
 
 #include <stdbool.h>
 #include <stdint.h>
 #include <string.h>
 
+#include "app_scheduler.h"
 #include "app_timer.h"
 #include "bsp_thread.h"
-#include "nrf_assert.h"
 #include "nrf_log.h"
 #include "nrf_log_ctrl.h"
 #include "nrf_log_default_backends.h"
@@ -65,13 +63,12 @@
 #include "mqttsn_client.h"
 #include "thread_utils.h"
 
-#include <openthread/ip6.h>
 #include <openthread/thread.h>
 
-#define DEFAULT_CHILD_TIMEOUT    40                                         /**< Thread child timeout [s]. */
-#define DEFAULT_POLL_PERIOD      1000                                       /**< Thread Sleepy End Device polling period when MQTT-SN Asleep. [ms] */
-#define SHORT_POLL_PERIOD        100                                        /**< Thread Sleepy End Device polling period when MQTT-SN Awake. [ms] */
-#define SEARCH_GATEWAY_TIMEOUT   20                                          /**< MQTT-SN Gateway discovery procedure timeout in [s]. */                                   
+#define SEARCH_GATEWAY_TIMEOUT 5                                            /**< MQTT-SN Gateway discovery procedure timeout in [s]. */
+
+#define SCHED_QUEUE_SIZE       32                                           /**< Maximum number of events in the scheduler queue. */
+#define SCHED_EVENT_DATA_SIZE  APP_TIMER_SCHED_EVENT_DATA_SIZE              /**< Maximum app_scheduler event size. */
 
 static mqttsn_client_t      m_client;                                       /**< An MQTT-SN client instance. */
 static mqttsn_remote_t      m_gateway_addr;                                 /**< A gateway address. */
@@ -100,6 +97,7 @@ static void light_on(void)
     LEDS_ON(BSP_LED_3_MASK);
 }
 
+
 /**@brief Turns the MQTT-SN network indication LED off.
  *
  * @details This LED is on when an MQTT-SN client is in disconnected or asleep state.
@@ -107,30 +105,6 @@ static void light_on(void)
 static void light_off(void)
 {
     LEDS_OFF(BSP_LED_3_MASK);
-}
-
-/**@brief Puts MQTT-SN client in sleep mode.
- *
- * @details This function changes Thread Sleepy End Device polling period to default.
- */
-static void sleep(void)
-{
-    otError error;
-    
-    error = otLinkSetPollPeriod(thread_ot_instance_get(), DEFAULT_POLL_PERIOD);
-    ASSERT(error == OT_ERROR_NONE);
-}
-
-/**@brief Puts MQTT-SN client in active mode.
- *
- * @details This function changes Thread Sleepy End Device polling period to short.
- */
-static void wake_up(void)
-{
-    otError error;
-
-    error = otLinkSetPollPeriod(thread_ot_instance_get(), SHORT_POLL_PERIOD);
-    ASSERT(error == OT_ERROR_NONE);
 }
 
 /**@brief Initializes MQTT-SN client's connection options.
@@ -145,17 +119,19 @@ static void connect_opt_init(void)
     memcpy(m_connect_opt.p_client_id, (unsigned char *)m_client_id, m_connect_opt.client_id_len);
 }
 
+
 /**@brief Processes GWINFO message from a gateway.
  *
- * @details This function initializes MQTT-SN Client's connect options and launches the connect procedure.
+ * @details This function updates MQTT-SN Gateway information.
  *
  * @param[in]    p_event  Pointer to MQTT-SN event.
  */
 static void gateway_info_callback(mqttsn_event_t * p_event)
 {
-    m_gateway_addr  = *(p_event->event_data.connected.p_gateway_addr);
-    m_gateway_id    = p_event->event_data.connected.gateway_id;
+    m_gateway_addr = *(p_event->event_data.connected.p_gateway_addr);
+    m_gateway_id   = p_event->event_data.connected.gateway_id;
 }
+
 
 /**@brief Processes CONNACK message from a gateway.
  *
@@ -175,16 +151,15 @@ static void connected_callback(void)
     }
 }
 
+
 /**@brief Processes DISCONNECT message from a gateway. */
 static void disconnected_callback(void)
 {
     light_off();
-    sleep();
 }
 
+
 /**@brief Processes REGACK message from a gateway.
- *
- * @details This function puts the client in sleep mode.
  *
  * @param[in] p_event Pointer to MQTT-SN event.
  */
@@ -193,36 +168,8 @@ static void regack_callback(mqttsn_event_t * p_event)
     m_topic.topic_id = p_event->event_data.registered.packet.topic.topic_id;
     NRF_LOG_INFO("MQTT-SN event: Topic has been registered with ID: %d.\r\n",
                  p_event->event_data.registered.packet.topic.topic_id);
-
-    sleep();
 }
 
-/**@brief Processes PUBACK message from a gateway.
- *
- * @details This function puts the client in sleep mode.
- */
-static void puback_callback(void)
-{
-    sleep();
-}
-
-/**@brief Processes DISCONNECT message being a response to sleep request.
- *
- * @details This function puts the client in sleep mode.
- */
-static void sleep_callback(void)
-{
-    sleep();
-}
-
-/**@brief Processes callback from keep-alive timer timeout.
- *
- * @details This function puts the client in active mode.
- */
-static void wakeup_callback(void)
-{
-    wake_up();
-}
 
 /**@brief Processes retransmission limit reached event. */
 static void timeout_callback(mqttsn_event_t * p_event)
@@ -232,17 +179,18 @@ static void timeout_callback(mqttsn_event_t * p_event)
                   p_event->event_data.error.msg_id);
 }
 
+
 /**@brief Processes results of gateway discovery procedure. */
 static void searchgw_timeout_callback(mqttsn_event_t * p_event)
 {
     NRF_LOG_INFO("MQTT-SN event: Gateway discovery result: 0x%x.\r\n", p_event->event_data.discovery);
-    sleep();
 }
+
 
 /**@brief Function for handling MQTT-SN events. */
 void mqttsn_evt_handler(mqttsn_client_t * p_client, mqttsn_event_t * p_event)
 {
-    switch (p_event->event_id)
+    switch(p_event->event_id)
     {
         case MQTTSN_EVENT_GATEWAY_FOUND:
             NRF_LOG_INFO("MQTT-SN event: Client has found an active gateway.\r\n");
@@ -254,7 +202,7 @@ void mqttsn_evt_handler(mqttsn_client_t * p_client, mqttsn_event_t * p_event)
             connected_callback();
             break;
 
-        case MQTTSN_EVENT_DISCONNECTED:
+        case MQTTSN_EVENT_DISCONNECT_PERMIT:
             NRF_LOG_INFO("MQTT-SN event: Client disconnected.\r\n");
             disconnected_callback();
             break;
@@ -266,17 +214,6 @@ void mqttsn_evt_handler(mqttsn_client_t * p_client, mqttsn_event_t * p_event)
 
         case MQTTSN_EVENT_PUBLISHED:
             NRF_LOG_INFO("MQTT-SN event: Client has successfully published content.\r\n");
-            puback_callback();
-            break;
-
-        case MQTTSN_EVENT_SLEEP_PERMIT:
-            NRF_LOG_INFO("MQTT-SN event: Client permitted to sleep.\r\n");
-            sleep_callback();
-            break;
-
-        case MQTTSN_EVENT_SLEEP_STOP:
-            NRF_LOG_INFO("MQTT-SN event: Client wakes up.\r\n");
-            wakeup_callback();
             break;
 
         case MQTTSN_EVENT_TIMEOUT:
@@ -338,7 +275,6 @@ static void bsp_event_handler(bsp_event_t event)
         {
             if(sequence == 0){
                 NRF_LOG_INFO("(0)");
-                wake_up();
                 uint32_t err_code = mqttsn_client_search_gateway(&m_client, SEARCH_GATEWAY_TIMEOUT);
                 if (err_code != NRF_SUCCESS)
                 {
@@ -347,9 +283,28 @@ static void bsp_event_handler(bsp_event_t event)
                 sequence = 1;
             }else if(sequence == 1){
                 NRF_LOG_INFO("(1)");
-                wake_up();
                 NRF_LOG_INFO("Wake up first time");
                 uint32_t err_code;
+                //fd11:1111:1122:0:98bf:60c7:9431:ee90
+                m_gateway_addr.addr[0] = 0xfd;
+                m_gateway_addr.addr[1] = 0x11;
+                m_gateway_addr.addr[2] = 0x11;
+                m_gateway_addr.addr[3] = 0x11;
+                m_gateway_addr.addr[4] = 0x11;
+                m_gateway_addr.addr[5] = 0x22;
+                m_gateway_addr.addr[6] = 0x00;
+                m_gateway_addr.addr[7] = 0x00;
+                m_gateway_addr.addr[8] = 0x98;
+                m_gateway_addr.addr[9] = 0xbf;
+                m_gateway_addr.addr[10] = 0x60;
+                m_gateway_addr.addr[11] = 0xc7;
+                m_gateway_addr.addr[12] = 0x94;
+                m_gateway_addr.addr[13] = 0x31;
+                m_gateway_addr.addr[14] = 0xee;
+                m_gateway_addr.addr[15] = 0x90;
+                m_gateway_addr.port_number = 47193;
+                m_gateway_id = 1;
+
                 err_code = mqttsn_client_connect(&m_client, &m_gateway_addr, m_gateway_id, &m_connect_opt);
                 if (err_code != NRF_SUCCESS)
                 {
@@ -360,7 +315,6 @@ static void bsp_event_handler(bsp_event_t event)
             else if(sequence == 2){
                 NRF_LOG_INFO("(2)");
                 NRF_LOG_INFO("Wake up next times");
-                wake_up();
                 publish();
                 sequence = 0;
             }
@@ -368,7 +322,6 @@ static void bsp_event_handler(bsp_event_t event)
         }
         case BSP_EVENT_KEY_1:
         {
-            wake_up();
             uint32_t err_code = mqttsn_client_search_gateway(&m_client, SEARCH_GATEWAY_TIMEOUT);
             if (err_code != NRF_SUCCESS)
             {
@@ -379,8 +332,6 @@ static void bsp_event_handler(bsp_event_t event)
 
         case BSP_EVENT_KEY_2:
         {
-            wake_up();
-
             uint32_t err_code;
 
             if (mqttsn_client_state_get(&m_client) == MQTTSN_CLIENT_CONNECTED)
@@ -404,18 +355,32 @@ static void bsp_event_handler(bsp_event_t event)
 
         case BSP_EVENT_KEY_3:
         {
-            wake_up();
             publish();
             break;
         }
 
         default:
-        {
             break;
-        }
     }
 }
-
+/*
+                m_gateway_addr.addr[0] = 0xff;
+                m_gateway_addr.addr[1] = 0x33;
+                m_gateway_addr.addr[2] = 0x00;
+                m_gateway_addr.addr[3] = 0x40;
+                m_gateway_addr.addr[4] = 0xfd;
+                m_gateway_addr.addr[5] = 0xde;
+                m_gateway_addr.addr[6] = 0xad;
+                m_gateway_addr.addr[7] = 0x00;
+                m_gateway_addr.addr[8] = 0xbe;
+                m_gateway_addr.addr[9] = 0xef;
+                m_gateway_addr.addr[10] = 0x00;
+                m_gateway_addr.addr[11] = 0x00;
+                m_gateway_addr.addr[12] = 0x00;
+                m_gateway_addr.addr[13] = 0x00;
+                m_gateway_addr.addr[14] = 0x00;
+                m_gateway_addr.addr[15] = 0x01;
+*/
 /***************************************************************************************************
  * @section Initialization
  **************************************************************************************************/
@@ -428,6 +393,7 @@ static void timer_init(void)
     APP_ERROR_CHECK(err_code);
 }
 
+
 /**@brief Function for initializing the LEDs.
  */
 static void leds_init(void)
@@ -435,6 +401,7 @@ static void leds_init(void)
     LEDS_CONFIGURE(LEDS_MASK);
     LEDS_OFF(LEDS_MASK);
 }
+
 
 /**@brief Function for initializing the nrf log module.
  */
@@ -445,6 +412,7 @@ static void log_init(void)
 
     NRF_LOG_DEFAULT_BACKENDS_INIT();
 }
+
 
 /**@brief Function for initializing the Thread Board Support Package.
  */
@@ -458,21 +426,22 @@ static void thread_bsp_init(void)
     APP_ERROR_CHECK(err_code);
 }
 
+
 /**@brief Function for initializing the Thread Stack.
  */
 static void thread_instance_init(void)
 {
     thread_configuration_t thread_configuration =
     {
-        .radio_mode            = THREAD_RADIO_MODE_RX_ON_WHEN_IDLE,
-        .autocommissioning     = true,
-        .poll_period           = DEFAULT_POLL_PERIOD,
-        .default_child_timeout = DEFAULT_CHILD_TIMEOUT,
+        .radio_mode        = THREAD_RADIO_MODE_RX_ON_WHEN_IDLE,
+        .autocommissioning = true,
     };
 
     thread_init(&thread_configuration);
+    thread_cli_init();
     thread_state_changed_callback_set(state_changed_callback);
 }
+
 
 /**@brief Function for initializing the MQTTSN client.
  */
@@ -487,6 +456,14 @@ static void mqttsn_init(void)
     connect_opt_init();
 }
 
+
+/**@brief Function for initializing scheduler module.
+ */
+static void scheduler_init(void)
+{
+    APP_SCHED_INIT(SCHED_EVENT_DATA_SIZE, SCHED_QUEUE_SIZE);
+}
+
 /***************************************************************************************************
  * @section Main
  **************************************************************************************************/
@@ -494,6 +471,7 @@ static void mqttsn_init(void)
 int main(int argc, char *argv[])
 {
     log_init();
+    scheduler_init();
     timer_init();
     leds_init();
 
@@ -504,6 +482,7 @@ int main(int argc, char *argv[])
     while (true)
     {
         thread_process();
+        app_sched_execute();
 
         if (NRF_LOG_PROCESS() == false)
         {

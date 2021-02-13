@@ -1,13 +1,26 @@
 
-OpenDocument="thread_utils.c", FilePath="D:/Projects/NordicRF/nRF5_SDK_for_Thread_and_Zigbee_v4.1.0_32ce5f8/components/thread/utils/thread_utils.c", Line=293
-OpenDocument="main.c", FilePath="D:/Dev/nrf52/nrf52_thread_sensortag/firmware/mqttsn_sleepy_publisher/main.c", Line=426
+
+Breakpoint=main.c:313, Permitted Impl.=BP_TYPE_MIXED, State=BP_STATE_ON
+Breakpoint=mqttsn_packet_receiver.c:886, Permitted Impl.=BP_TYPE_MIXED, State=BP_STATE_ON
+Breakpoint=0x000007B2, State=BP_STATE_ON
+Breakpoint=0x000007BA, State=BP_STATE_ON
+Breakpoint=0x000007EC, State=BP_STATE_ON
+Breakpoint=0x000007F4, State=BP_STATE_ON
+OpenDocument="SEGGER_RTT.c", FilePath="D:/Projects/NordicRF/nRF5_SDK_for_Thread_and_Zigbee_v4.1.0_32ce5f8/external/segger_rtt/SEGGER_RTT.c", Line=1692
+OpenDocument="mqttsn_packet_receiver.c", FilePath="D:/Projects/NordicRF/nRF5_SDK_for_Thread_and_Zigbee_v4.1.0_32ce5f8/components/thread/mqtt_sn/mqtt_sn_client/mqttsn_packet_receiver.c", Line=912
+OpenDocument="mqttsn_client.c", FilePath="D:/Projects/NordicRF/nRF5_SDK_for_Thread_and_Zigbee_v4.1.0_32ce5f8/components/thread/mqtt_sn/mqtt_sn_client/mqttsn_client.c", Line=568
+OpenDocument="app_button.c", FilePath="D:/Projects/NordicRF/nRF5_SDK_for_Thread_and_Zigbee_v4.1.0_32ce5f8/components/libraries/button/app_button.c", Line=121
+OpenDocument="thread_utils.c", FilePath="D:/Projects/NordicRF/nRF5_SDK_for_Thread_and_Zigbee_v4.1.0_32ce5f8/components/thread/utils/thread_utils.c", Line=285
+OpenDocument="main.c", FilePath="D:/Dev/nrf52/nrf52_thread_sensortag/firmware/mqttsn_sleepy_publisher/main.c", Line=299
 OpenToolbar="Debug", Floating=0, x=0, y=0
-OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=0, w=793, h=1034, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
+OpenWindow="Call Stack", DockArea=RIGHT, x=0, y=0, w=468, h=888, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
+OpenWindow="Registers 1", DockArea=RIGHT, x=0, y=1, w=468, h=145, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, FilteredItems=[], RefreshRate=1
 OpenWindow="Memory 1", DockArea=BOTTOM, x=1, y=0, w=1065, h=477, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0, EditorAddress=0x0
 OpenWindow="Functions", DockArea=LEFT, x=0, y=0, w=370, h=1034, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
 OpenWindow="Console", DockArea=BOTTOM, x=0, y=0, w=1071, h=477, FilterBarShown=0, TotalValueBarShown=0, ToolBarShown=0
 TableHeader="Functions", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Address";"Size";"#Insts";"Class";"Source"], ColWidths=[3696;104;100;100;100;338]
-TableHeader="Power Sampling", SortCol="None", SortOrder="ASCENDING", VisibleCols=["Index";"Time";"Ch 0"], ColWidths=[100;100;100]
-TableHeader="Registers 1", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Description"], ColWidths=[100;144;549]
+TableHeader="Call Stack", SortCol="Function", SortOrder="ASCENDING", VisibleCols=["Function";"Stack Frame";"Source";"PC";"Return Address";"Stack Used"], ColWidths=[293;154;158;104;234;100]
+TableHeader="Power Sampling", SortCol="Index", SortOrder="ASCENDING", VisibleCols=["Index";"Time";"Ch 0"], ColWidths=[100;100;100]
+TableHeader="Registers 1", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Description"], ColWidths=[100;144;329]
 TableHeader="RegisterSelectionDialog", SortCol="None", SortOrder="ASCENDING", VisibleCols=[], ColWidths=[]
-TableHeader="TargetExceptionDialog", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Address";"Description"], ColWidths=[26;26;26;45]
+TableHeader="TargetExceptionDialog", SortCol="Name", SortOrder="ASCENDING", VisibleCols=["Name";"Value";"Address";"Description"], ColWidths=[200;100;100;608]
