@@ -90,7 +90,7 @@ Wire Wire Line
 	6350 5200 6600 5200
 Wire Wire Line
 	6600 4900 6350 4900
-Text Label 11100 4500 2    50   ~ 0
+Text Label 10850 4550 2    50   ~ 0
 SENS2_VCC
 Text Label 5900 5450 0    50   ~ 0
 INT1
@@ -113,60 +113,8 @@ Wire Wire Line
 	6150 5450 5900 5450
 Text Notes 9450 2600 0    50   ~ 0
 I2C Address Pressure + Temp: 0x76
-Text Notes 8700 5300 0    50   ~ 0
+Text Notes 8900 5350 0    50   ~ 0
 I2C Address: 0x48
-$Comp
-L Device:C_Small C3
-U 1 1 60277C20
-P 5550 1350
-F 0 "C3" H 5642 1396 50  0000 L CNN
-F 1 "10uF" H 5642 1305 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 5550 1350 50  0001 C CNN
-F 3 "~" H 5550 1350 50  0001 C CNN
-	1    5550 1350
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C4
-U 1 1 6027821B
-P 5900 1350
-F 0 "C4" H 5992 1396 50  0000 L CNN
-F 1 "0.1uF" H 5992 1305 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 5900 1350 50  0001 C CNN
-F 3 "~" H 5900 1350 50  0001 C CNN
-	1    5900 1350
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	6200 1250 5900 1250
-Connection ~ 5550 1250
-Wire Wire Line
-	5550 1250 5350 1250
-Connection ~ 5900 1250
-Wire Wire Line
-	5900 1250 5550 1250
-$Comp
-L power:GND #PWR0109
-U 1 1 6027D829
-P 5550 1450
-F 0 "#PWR0109" H 5550 1200 50  0001 C CNN
-F 1 "GND" H 5555 1277 50  0000 C CNN
-F 2 "" H 5550 1450 50  0001 C CNN
-F 3 "" H 5550 1450 50  0001 C CNN
-	1    5550 1450
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR0110
-U 1 1 6027E10B
-P 5900 1450
-F 0 "#PWR0110" H 5900 1200 50  0001 C CNN
-F 1 "GND" H 5905 1277 50  0000 C CNN
-F 2 "" H 5900 1450 50  0001 C CNN
-F 3 "" H 5900 1450 50  0001 C CNN
-	1    5900 1450
-	1    0    0    -1  
-$EndComp
 $Comp
 L power:GND #PWR0111
 U 1 1 6027E39F
@@ -356,7 +304,7 @@ Wire Wire Line
 	3000 2150 3550 2150
 Wire Wire Line
 	3000 3050 3550 3050
-Text Label 11050 5250 2    50   ~ 0
+Text Label 10800 5300 2    50   ~ 0
 VCC
 Text Label 5800 6550 2    50   ~ 0
 SWDIO
@@ -450,122 +398,80 @@ NoConn ~ 3550 2850
 $Comp
 L VEML6030:VEML6030 IC2
 U 1 1 6023279F
-P 8150 4850
-F 0 "IC2" H 8650 5115 50  0000 C CNN
-F 1 "VEML6030" H 8650 5024 50  0000 C CNN
-F 2 "VEML6030:VEML6030" H 9000 4950 50  0001 L CNN
-F 3 "https://www.vishay.com/docs/84366/veml6030.pdf" H 9000 4850 50  0001 L CNN
-F 4 "VEML6030 Vishay, Ambient Light Sensor, Ambient Light to Digital Data I2C 6-Pin" H 9000 4750 50  0001 L CNN "Description"
-F 5 "0.87" H 9000 4650 50  0001 L CNN "Height"
-F 6 "Vishay" H 9000 4550 50  0001 L CNN "Manufacturer_Name"
-F 7 "VEML6030" H 9000 4450 50  0001 L CNN "Manufacturer_Part_Number"
-F 8 "78-VEML6030" H 9000 4350 50  0001 L CNN "Mouser Part Number"
-F 9 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/VEML6030/?qs=oeTp6q%252Bm7GMZCCnCKRrv4g%3D%3D" H 9000 4250 50  0001 L CNN "Mouser Price/Stock"
-F 10 "VEML6030" H 9000 4150 50  0001 L CNN "Arrow Part Number"
-F 11 "https://www.arrow.com/en/products/veml6030/vishay" H 9000 4050 50  0001 L CNN "Arrow Price/Stock"
-	1    8150 4850
+P 8350 4900
+F 0 "IC2" H 8850 5165 50  0000 C CNN
+F 1 "VEML6030" H 8850 5074 50  0000 C CNN
+F 2 "VEML6030:VEML6030" H 9200 5000 50  0001 L CNN
+F 3 "https://www.vishay.com/docs/84366/veml6030.pdf" H 9200 4900 50  0001 L CNN
+F 4 "VEML6030 Vishay, Ambient Light Sensor, Ambient Light to Digital Data I2C 6-Pin" H 9200 4800 50  0001 L CNN "Description"
+F 5 "0.87" H 9200 4700 50  0001 L CNN "Height"
+F 6 "Vishay" H 9200 4600 50  0001 L CNN "Manufacturer_Name"
+F 7 "VEML6030" H 9200 4500 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "78-VEML6030" H 9200 4400 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Vishay-Semiconductors/VEML6030/?qs=oeTp6q%252Bm7GMZCCnCKRrv4g%3D%3D" H 9200 4300 50  0001 L CNN "Mouser Price/Stock"
+F 10 "VEML6030" H 9200 4200 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/veml6030/vishay" H 9200 4100 50  0001 L CNN "Arrow Price/Stock"
+	1    8350 4900
 	1    0    0    -1  
 $EndComp
-Text Label 7800 5050 0    50   ~ 0
+Text Label 8000 5100 0    50   ~ 0
 INT1
 Wire Wire Line
-	8150 5050 7800 5050
-Text Label 7800 4950 0    50   ~ 0
+	8350 5100 8000 5100
+Text Label 8000 5000 0    50   ~ 0
 SDA
-Text Label 9350 4950 2    50   ~ 0
+Text Label 9550 5000 2    50   ~ 0
 SCL
 Wire Wire Line
-	9150 4950 9350 4950
+	9350 5000 9550 5000
 $Comp
 L Device:C_Small C8
 U 1 1 6025B296
-P 10150 4950
-F 0 "C8" H 10242 4996 50  0000 L CNN
-F 1 "0.1uF" H 10242 4905 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 10150 4950 50  0001 C CNN
-F 3 "~" H 10150 4950 50  0001 C CNN
-	1    10150 4950
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C6
-U 1 1 6025BDDE
-P 9800 4950
-F 0 "C6" H 9892 4996 50  0000 L CNN
-F 1 "10uF" H 9892 4905 50  0000 L CNN
-F 2 "Capacitor_SMD:C_0603_1608Metric" H 9800 4950 50  0001 C CNN
-F 3 "~" H 9800 4950 50  0001 C CNN
-	1    9800 4950
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9800 4850 10150 4850
-$Comp
-L power:GND #PWR0102
-U 1 1 60266946
-P 9800 5100
-F 0 "#PWR0102" H 9800 4850 50  0001 C CNN
-F 1 "GND" H 9805 4927 50  0000 C CNN
-F 2 "" H 9800 5100 50  0001 C CNN
-F 3 "" H 9800 5100 50  0001 C CNN
-	1    9800 5100
+P 9900 5000
+F 0 "C8" H 9992 5046 50  0000 L CNN
+F 1 "0.1uF" H 9992 4955 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0603_1608Metric" H 9900 5000 50  0001 C CNN
+F 3 "~" H 9900 5000 50  0001 C CNN
+	1    9900 5000
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0103
 U 1 1 60266FC1
-P 10150 5100
-F 0 "#PWR0103" H 10150 4850 50  0001 C CNN
-F 1 "GND" H 10155 4927 50  0000 C CNN
-F 2 "" H 10150 5100 50  0001 C CNN
-F 3 "" H 10150 5100 50  0001 C CNN
-	1    10150 5100
+P 9900 5150
+F 0 "#PWR0103" H 9900 4900 50  0001 C CNN
+F 1 "GND" H 9905 4977 50  0000 C CNN
+F 2 "" H 9900 5150 50  0001 C CNN
+F 3 "" H 9900 5150 50  0001 C CNN
+	1    9900 5150
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR0104
 U 1 1 6026727A
-P 7600 4900
-F 0 "#PWR0104" H 7600 4650 50  0001 C CNN
-F 1 "GND" H 7605 4727 50  0000 C CNN
-F 2 "" H 7600 4900 50  0001 C CNN
-F 3 "" H 7600 4900 50  0001 C CNN
-	1    7600 4900
+P 7800 4950
+F 0 "#PWR0104" H 7800 4700 50  0001 C CNN
+F 1 "GND" H 7805 4777 50  0000 C CNN
+F 2 "" H 7800 4950 50  0001 C CNN
+F 3 "" H 7800 4950 50  0001 C CNN
+	1    7800 4950
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	7800 4950 8150 4950
+	8000 5000 8350 5000
 Wire Wire Line
-	8150 4850 7600 4850
+	8350 4900 7800 4900
 Wire Wire Line
-	7600 4850 7600 4900
+	7800 4900 7800 4950
 Wire Wire Line
-	9800 5100 9800 5050
+	9900 5150 9900 5100
 Wire Wire Line
-	10150 5100 10150 5050
-$Comp
-L Device:R_Small R5
-U 1 1 60278CF3
-P 9600 4850
-F 0 "R5" V 9404 4850 50  0000 C CNN
-F 1 "10R" V 9495 4850 50  0000 C CNN
-F 2 "Resistor_SMD:R_0603_1608Metric" H 9600 4850 50  0001 C CNN
-F 3 "~" H 9600 4850 50  0001 C CNN
-	1    9600 4850
-	0    1    1    0   
-$EndComp
+	9350 4900 9600 4900
 Wire Wire Line
-	9150 4850 9400 4850
+	9350 5100 9600 5100
 Wire Wire Line
-	9150 5050 9400 5050
-Wire Wire Line
-	9400 5050 9400 4850
-Wire Wire Line
-	9500 4850 9400 4850
-Connection ~ 9400 4850
-Wire Wire Line
-	9700 4850 9800 4850
-Connection ~ 9800 4850
+	9600 5100 9600 4900
+Connection ~ 9600 4900
 Text Label 7600 1500 0    50   ~ 0
 VCC
 Text Label 7600 2150 0    50   ~ 0
@@ -720,12 +626,12 @@ $EndComp
 $Comp
 L Jumper:SolderJumper_3_Bridged12 JP2
 U 1 1 603AE514
-P 10600 4850
-F 0 "JP2" V 10554 4918 50  0000 L CNN
-F 1 "SolderJumper_3_Bridged12" V 10050 4350 50  0000 L CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm" H 10600 4850 50  0001 C CNN
-F 3 "~" H 10600 4850 50  0001 C CNN
-	1    10600 4850
+P 10350 4900
+F 0 "JP2" V 10304 4968 50  0000 L CNN
+F 1 "SolderJumper_3_Bridged12" V 9800 4400 50  0000 L CNN
+F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm" H 10350 4900 50  0001 C CNN
+F 3 "~" H 10350 4900 50  0001 C CNN
+	1    10350 4900
 	0    1    1    0   
 $EndComp
 Wire Wire Line
@@ -737,17 +643,21 @@ Wire Wire Line
 Wire Wire Line
 	8150 1500 7600 1500
 Wire Wire Line
-	10450 4850 10150 4850
-Connection ~ 10150 4850
+	10200 4900 9900 4900
 Wire Wire Line
-	11100 4500 10600 4500
+	10850 4550 10350 4550
 Wire Wire Line
-	10600 4500 10600 4650
+	10350 4550 10350 4700
 Wire Wire Line
-	11050 5250 10600 5250
+	10800 5300 10350 5300
 Wire Wire Line
-	10600 5050 10600 5250
+	10350 5100 10350 5300
 NoConn ~ 3000 2450
 NoConn ~ 3000 2350
 NoConn ~ 3000 2250
+Wire Wire Line
+	9600 4900 9900 4900
+Connection ~ 9900 4900
+Wire Wire Line
+	5350 1250 6200 1250
 $EndSCHEMATC
