@@ -316,7 +316,7 @@ static void bsp_event_handler(bsp_event_t event)
                 NRF_LOG_INFO("(2)");
                 NRF_LOG_INFO("Wake up next times");
                 publish();
-                sequence = 0;
+                sequence = 2;//stay in step 2
             }
             break;
         }
