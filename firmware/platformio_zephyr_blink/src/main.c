@@ -18,9 +18,9 @@
 #define LED0_NODE DT_ALIAS(led0)
 
 #define LED0	DT_GPIO_LABEL(LED0_NODE, gpios)
-//#define PIN	DT_GPIO_PIN(LED0_NODE, gpios)
+#define PIN	DT_GPIO_PIN(LED0_NODE, gpios)
 //override dts due to using nrf52840_dk instead of nrf52840dongle_nrf52840
-#define PIN	12
+//#define PIN	12
 
 void main(void)
 {
