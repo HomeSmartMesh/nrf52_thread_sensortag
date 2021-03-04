@@ -13,7 +13,7 @@
 LOG_MODULE_REGISTER(main, LOG_LEVEL_INF);
 
 /* 1000 msec = 1 sec */
-#define SLEEP_TIME_MS   600
+#define SLEEP_TIME_MS   300
 
 /* The devicetree node identifier for the "led0" alias. */
 //led0_green led1_red/green/blue
@@ -29,8 +29,6 @@ void main(void)
 	bool led_is_on = true;
 	int ret = 0;
 
-	//log_init();
-
 	LOG_INF("Starting");
 
 	struct device const *dev = device_get_binding(LED0);
@@ -43,11 +41,11 @@ void main(void)
 		return;
 	}
 
+	int count = 0;
 	while (1) {
-		//if (log_process(false) == false) {        }		
 		gpio_pin_set(dev, PIN, (int)led_is_on);
 		led_is_on = !led_is_on;
 		k_msleep(SLEEP_TIME_MS);
-		LOG_INF("update.");
+		LOG_INF("loop: %d",count++);
 	}
 }
