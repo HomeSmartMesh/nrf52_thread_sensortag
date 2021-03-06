@@ -9,7 +9,6 @@
 #include <devicetree.h>
 #include <drivers/gpio.h>
 #include <logging/log.h>
-#include <logging/log_ctrl.h>
 LOG_MODULE_REGISTER(main, LOG_LEVEL_INF);
 
 /* 1000 msec = 1 sec */
