@@ -10,9 +10,7 @@
 #include <drivers/gpio.h>
 #include <logging/log.h>
 
-#include <drivers/i2c.h>
-
-#define MAX44009_I2C_ADDR	0x4A
+#include <drivers/sensor.h>
 
 LOG_MODULE_REGISTER(main, LOG_LEVEL_INF);
 
@@ -25,40 +23,40 @@ LOG_MODULE_REGISTER(main, LOG_LEVEL_INF);
 
 #define LED0	DT_GPIO_LABEL(LED0_NODE, gpios)
 #define PIN	DT_GPIO_PIN(LED0_NODE, gpios)
-//override dts due to using nrf52840_dk instead of nrf52840dongle_nrf52840
-//#define PIN	12
 
+void test_sensor(){
+	const struct device *dev;
+	struct sensor_value val;
+	uint32_t lum = 0U;
 
-static int read_bytes(const struct device *i2c_dev, uint16_t addr,
-		      uint8_t *data, uint32_t num_bytes)
-{
-	uint8_t wr_addr[2];
-	struct i2c_msg msgs[2];
+	printk("MAX44009 light sensor application\n");
 
-	/* Now try to read back from FRAM */
+	dev = device_get_binding("MAX44009");
+	if (!dev) {
+		printk("sensor: device not found.\n");
+		return;
+	}
 
-	/* FRAM address */
-	wr_addr[0] = (addr >> 8) & 0xFF;
-	wr_addr[1] = addr & 0xFF;
+	while (1) {
+		if (sensor_sample_fetch_chan(dev, SENSOR_CHAN_LIGHT) != 0) {
+			printk("sensor: sample fetch fail.\n");
+			return;
+		}
 
-	/* Setup I2C messages */
+		if (sensor_channel_get(dev, SENSOR_CHAN_LIGHT, &val) != 0) {
+			printk("sensor: channel get fail.\n");
+			return;
+		}
 
-	/* Send the address to read from */
-	msgs[0].buf = wr_addr;
-	msgs[0].len = 2U;
-	msgs[0].flags = I2C_MSG_WRITE;
+		lum = val.val1;
+		printk("sensor: lum reading: %d\n", lum);
 
-	/* Read from device. STOP after this. */
-	msgs[1].buf = data;
-	msgs[1].len = num_bytes;
-	msgs[1].flags = I2C_MSG_READ | I2C_MSG_STOP;
-
-	return i2c_transfer(i2c_dev, &msgs[0], 2, MAX44009_I2C_ADDR);
+		k_sleep(K_MSEC(4000));
+	}	
 }
 
 void main(void)
 {
-	const struct device *i2c_dev;
 
 	bool led_is_on = true;
 	int ret = 0;
@@ -75,28 +73,9 @@ void main(void)
 	if (ret < 0) {
 		return;
 	}
-	LOG_INF("next Starting I2C");
+	LOG_INF("testing sensor");
 
-	//i2c_dev = device_get_binding("I2C_0");
-	i2c_dev = device_get_binding(DT_LABEL(DT_NODELABEL(i2c0)));
-	//i2c_dev = device_get_binding(DT_LABEL(DT_ALIAS(i2c_0)));
-	
-	LOG_INF("i2c_dev=0x%0x",i2c_dev);
-	__ASSERT(i2c_dev, "Failed to get the device");
-	if (!i2c_dev) {
-		printk("I2C: Device driver not found.\n");
-		return;
-	}
-	LOG_INF("binding obtained");
-	uint8_t data[10];
-	ret = read_bytes(i2c_dev, 0x02, &data[0], 1);
-	if (ret) {
-		printk("Error reading from FRAM! error code (%d)\n", ret);
-		return;
-	} else {
-		printk("Read 0x%X from address 0x00.\n", data);
-	}
-
+	test_sensor();
 
 	int count = 0;
 	while (1) {
