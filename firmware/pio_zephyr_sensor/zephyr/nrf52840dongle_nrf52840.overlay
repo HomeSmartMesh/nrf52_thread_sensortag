@@ -1,0 +1,11 @@
+&i2c0 {
+	sda-pin = <13>;
+	scl-pin = <10>;
+
+	max44009@4a {
+		compatible = "maxim,max44009";
+		reg = <0x4a>;
+		int-gpios = <&gpioc 2 0>;
+		label = "MAX44009";
+	};
+};

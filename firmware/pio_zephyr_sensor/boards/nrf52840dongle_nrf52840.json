@@ -1,0 +1,52 @@
+{
+    "build": {
+      "arduino":{
+        "ldscript": "nrf52_xxaa.ld"
+      },
+      "core": "nRF5",
+      "cpu": "cortex-m4",
+      "extra_flags": "-DARDUINO_NRF52_DK",
+      "f_cpu": "64000000L",
+      "mcu": "nrf52840",
+      "variant": "nRF52DK",
+      "zephyr": {
+         "variant": "nrf52840dongle_nrf52840"
+      }
+    },
+    "connectivity": [
+      "bluetooth"
+    ],
+    "debug": {
+      "default_tools": [
+        "jlink"
+      ],
+      "jlink_device": "nRF52840_xxAA",
+      "onboard_tools": [
+        "cmsis-dap",
+        "jlink"
+      ],
+      "svd_path": "nrf52840.svd"
+    },
+    "frameworks": [
+      "arduino",
+      "mbed",
+      "zephyr"
+    ],
+    "name": "Nordic nRF52840 Dongle-DK",
+    "upload": {
+      "maximum_ram_size": 262144,
+      "maximum_size": 1048576,
+      "protocol": "jlink",
+      "protocols": [
+        "jlink",
+        "nrfjprog",
+        "stlink",
+        "blackmagic",
+        "cmsis-dap",
+        "mbed"
+      ]
+    },
+    "url": "https://www.nordicsemi.com/Software-and-tools/Development-Kits/nRF52840-Dongle/",
+    "vendor": "Nordic"
+  }
+  
