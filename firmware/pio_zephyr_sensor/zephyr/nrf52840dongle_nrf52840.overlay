@@ -5,7 +5,7 @@
 	max44009@4a {
 		compatible = "maxim,max44009";
 		reg = <0x4a>;
-		int-gpios = <&gpio0 2 0>;
+		int-gpios = <&gpio0 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>;
 		label = "MAX44009";
 	};
 };

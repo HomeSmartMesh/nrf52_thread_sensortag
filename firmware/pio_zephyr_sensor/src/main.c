@@ -24,6 +24,8 @@ LOG_MODULE_REGISTER(main, LOG_LEVEL_INF);
 #define LED0	DT_GPIO_LABEL(LED0_NODE, gpios)
 #define PIN	DT_GPIO_PIN(LED0_NODE, gpios)
 
+extern int max44009_init(const struct device *dev);
+
 void test_sensor(){
 	const struct device *dev;
 	struct sensor_value val;
@@ -36,6 +38,8 @@ void test_sensor(){
 		printk("sensor: device not found.\n");
 		return;
 	}
+
+	max44009_init(dev);
 
 	while (1) {
 		if (sensor_sample_fetch_chan(dev, SENSOR_CHAN_LIGHT) != 0) {

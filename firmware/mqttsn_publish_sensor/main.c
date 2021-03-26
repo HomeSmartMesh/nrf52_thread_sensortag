@@ -96,6 +96,8 @@ static mqttsn_topic_t       m_topic            =                            /**<
     .topic_id     = 0,
 };
 
+uint32_t light = 0;
+
 /***************************************************************************************************
  * @section MQTT-SN
  **************************************************************************************************/
@@ -329,7 +331,7 @@ static void led_state_pub(uint8_t led_state)
 
 static void light_pub()
 {
-    uint32_t light = max44009_read_light(&m_twi);
+    light = max44009_read_light(&m_twi);
     uint8_t *light_byte =(uint8_t*)&light;
     uint32_t err_code = mqttsn_client_publish(&m_client, m_topic.topic_id, light_byte, 4, &m_msg_id);
     if (err_code != NRF_SUCCESS)
@@ -518,6 +520,8 @@ int main(int argc, char *argv[])
     timer_init();
     leds_init();
     twi_init(&m_twi);
+
+    light = max44009_read_light(&m_twi);
 
 
     thread_instance_init();
