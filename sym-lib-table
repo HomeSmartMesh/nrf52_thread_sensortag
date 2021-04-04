@@ -6,4 +6,5 @@
   (lib (name VEML6030)(type Legacy)(uri ${KIPRJMOD}/components/VEML6030/KiCad/VEML6030.lib)(options "")(descr ""))
   (lib (name MS860702BA01-50)(type Legacy)(uri ${KIPRJMOD}/components/MS860702BA01-50/KiCad/MS860702BA01-50.lib)(options "")(descr ""))
   (lib (name MS88SF2)(type Legacy)(uri ${KIPRJMOD}/components/MS88SF2/MS88SF2.lib)(options "")(descr ""))
+  (lib (name APHF1608LSEEQBDZGKC)(type Legacy)(uri ${KIPRJMOD}/components/APHF1608LSEEQBDZGKC/KiCad/APHF1608LSEEQBDZGKC.lib)(options "")(descr ""))
 )

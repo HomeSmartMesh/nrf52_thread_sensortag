@@ -356,8 +356,6 @@ Wire Notes Line
 Wire Notes Line
 	7350 4000 4650 4000
 Wire Notes Line
-	4650 5750 7350 5750
-Wire Notes Line
 	4650 500  4650 7800
 Wire Notes Line
 	4650 2100 7350 2100
@@ -606,7 +604,6 @@ Wire Wire Line
 Connection ~ 2450 4100
 Wire Wire Line
 	2450 4100 2500 4100
-NoConn ~ 3000 2550
 NoConn ~ 3000 3150
 NoConn ~ 3000 3250
 NoConn ~ 3000 3350
@@ -652,12 +649,100 @@ Wire Wire Line
 	10800 5300 10350 5300
 Wire Wire Line
 	10350 5100 10350 5300
-NoConn ~ 3000 2450
-NoConn ~ 3000 2350
 NoConn ~ 3000 2250
 Wire Wire Line
 	9600 4900 9900 4900
 Connection ~ 9900 4900
 Wire Wire Line
 	5350 1250 6200 1250
+$Comp
+L APHF1608LSEEQBDZGKC:APHF1608LSEEQBDZGKC LED1
+U 1 1 606A3F2A
+P 2050 6750
+F 0 "LED1" H 2450 7015 50  0000 C CNN
+F 1 "APHF1608LSEEQBDZGKC" H 2450 6924 50  0000 C CNN
+F 2 "APHF1608LSEEQBDZGKC:APHF1608LSEEQBDZGKC" H 2700 6850 50  0001 L CNN
+F 3 "https://componentsearchengine.com/Datasheets/1/APHF1608LSEEQBDZGKC.pdf" H 2700 6750 50  0001 L CNN
+F 4 "Standard LEDs - SMD RGB 0603 SMD" H 2700 6650 50  0001 L CNN "Description"
+F 5 "" H 2700 6550 50  0001 L CNN "Height"
+F 6 "Kingbright" H 2700 6450 50  0001 L CNN "Manufacturer_Name"
+F 7 "APHF1608LSEEQBDZGKC" H 2700 6350 50  0001 L CNN "Manufacturer_Part_Number"
+F 8 "604-APHF1608LQBDZGKC" H 2700 6250 50  0001 L CNN "Mouser Part Number"
+F 9 "https://www.mouser.co.uk/ProductDetail/Kingbright/APHF1608LSEEQBDZGKC?qs=YCa%2FAAYMW02iGkI4tWMQgA%3D%3D" H 2700 6150 50  0001 L CNN "Mouser Price/Stock"
+F 10 "APHF1608LSEEQBDZGKC" H 2700 6050 50  0001 L CNN "Arrow Part Number"
+F 11 "https://www.arrow.com/en/products/aphf1608lseeqbdzgkc/kingbright" H 2700 5950 50  0001 L CNN "Arrow Price/Stock"
+	1    2050 6750
+	1    0    0    -1  
+$EndComp
+Text Label 1400 6750 0    50   ~ 0
+VCC
+$Comp
+L Device:R_Small R5
+U 1 1 606A6EBA
+P 1900 6850
+F 0 "R5" V 1900 6850 50  0000 C CNN
+F 1 "1k2" V 2000 6850 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 1900 6850 50  0001 C CNN
+F 3 "~" H 1900 6850 50  0001 C CNN
+	1    1900 6850
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R6
+U 1 1 606A79B5
+P 3050 6750
+F 0 "R6" V 3050 6750 50  0000 C CNN
+F 1 "2k2" V 2945 6750 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 3050 6750 50  0001 C CNN
+F 3 "~" H 3050 6750 50  0001 C CNN
+	1    3050 6750
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R7
+U 1 1 606A81A9
+P 3050 6850
+F 0 "R7" V 3050 6850 50  0000 C CNN
+F 1 "390R" V 3150 6850 50  0000 C CNN
+F 2 "Resistor_SMD:R_0603_1608Metric" H 3050 6850 50  0001 C CNN
+F 3 "~" H 3050 6850 50  0001 C CNN
+	1    3050 6850
+	0    1    1    0   
+$EndComp
+Text Label 1400 6850 0    50   ~ 0
+LED_RED
+Text Label 3700 6750 2    50   ~ 0
+LED_GREEN
+Text Label 3700 6850 2    50   ~ 0
+LED_BLUE
+Wire Wire Line
+	3700 6750 3150 6750
+Wire Wire Line
+	3150 6850 3700 6850
+Wire Wire Line
+	2950 6850 2850 6850
+Wire Wire Line
+	2850 6750 2950 6750
+Wire Wire Line
+	2050 6850 2000 6850
+Wire Wire Line
+	1800 6850 1400 6850
+Wire Wire Line
+	1400 6750 2050 6750
+Wire Notes Line
+	500  5750 7350 5750
+Text Notes 550  5900 0    50   ~ 0
+RGB LED
+Text Label 3550 2350 2    50   ~ 0
+LED_RED
+Text Label 3550 2450 2    50   ~ 0
+LED_GREEN
+Text Label 3550 2550 2    50   ~ 0
+LED_BLUE
+Wire Wire Line
+	3000 2350 3550 2350
+Wire Wire Line
+	3550 2450 3000 2450
+Wire Wire Line
+	3000 2550 3550 2550
 $EndSCHEMATC
