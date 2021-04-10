@@ -8,9 +8,6 @@ LOG_MODULE_REGISTER(main, LOG_LEVEL_INF);
 
 void main(void)
 {
-	bool led_is_on = true;
-	int ret = 0;
-
 	LOG_INF("Starting");
 
 	int count = 0;
