@@ -7,7 +7,7 @@
 
 ## usage
 ```bash
-west build -p auto -b nrf52840dk_nrf52840
+west build -b nrf52840_sensortag
 west flash
 ```
 
@@ -18,7 +18,7 @@ Including boilerplate (Zephyr base (cached)): D:/Projects/zephyrproject/zephyr/c
 -- Application: D:/Dev/nrf52/nrf52_thread_sensortag/firmware/tag_zephyr_hello
 -- Zephyr version: 2.5.99 (D:/Projects/zephyrproject/zephyr)
 -- Found west (found suitable version "0.9.0", minimum required is "0.7.1")
--- Board: nrf52840dk_nrf52840
+-- Board: nrf52840_sensortag
 -- Cache files will be written to: D:/Projects/zephyrproject/zephyr/.cache
 -- Found toolchain: gnuarmemb (D:/tools/gnu_arm_embedded/9_2020-q2-update)
 ```
@@ -47,3 +47,5 @@ rtt log
 [00:00:17.339,385] <inf> main: loop: 16
 [00:00:18.339,477] <inf> main: loop: 17
 ```
+zephyr board porting recommendations
+https://docs.zephyrproject.org/latest/guides/porting/board_porting.html#porting-general-recommendations

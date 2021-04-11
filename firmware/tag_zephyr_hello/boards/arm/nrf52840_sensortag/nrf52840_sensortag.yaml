@@ -1,0 +1,21 @@
+identifier: nrf52840_sensortag
+name: nrf52840 Sensor Tag
+type: mcu
+arch: arm
+ram: 256
+flash: 1024
+toolchain:
+  - zephyr
+  - gnuarmemb
+  - xtools
+supported:
+  - adc
+  - sensors_i2c
+  - ble
+  - counter
+  - gpio
+  - i2c
+  - ieee802154
+  - pwm
+  - watchdog
+  - netif:openthread
