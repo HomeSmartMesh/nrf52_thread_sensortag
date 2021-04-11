@@ -8,7 +8,7 @@ LOG_MODULE_REGISTER(main, LOG_LEVEL_INF);
 
 void main(void)
 {
-	LOG_INF("Starting");
+	LOG_INF("Hello from Sensor Tag");
 
 	int count = 0;
 	while (1) {

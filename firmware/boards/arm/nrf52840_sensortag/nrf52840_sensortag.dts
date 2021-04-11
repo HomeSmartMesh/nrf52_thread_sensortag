@@ -25,15 +25,15 @@
 	leds {
 		compatible = "gpio-leds";
 		led0: led_0 {
-			gpios = <&gpio0 04 GPIO_ACTIVE_LOW>;
+			gpios = <&gpio0 4 GPIO_ACTIVE_LOW>;
 			label = "Red LED 0";
 		};
 		led1: led_1 {
-			gpios = <&gpio0 06 GPIO_ACTIVE_LOW>;
+			gpios = <&gpio0 6 GPIO_ACTIVE_LOW>;
 			label = "Green LED 1";
 		};
 		led2: led_2 {
-			gpios = <&gpio0 08 GPIO_ACTIVE_LOW>;
+			gpios = <&gpio0 8 GPIO_ACTIVE_LOW>;
 			label = "Blue LED 2";
 		};
 	};
@@ -41,15 +41,15 @@
 	pwmleds {
 		compatible = "pwm-leds";
 		pwm_led0: pwm_led_0 {
-			pwms = <&pwm0 04>;
+			pwms = <&pwm0 4>;
 			label = "Red PWM LED 0";
 		};
 		pwm_led1: pwm_led_1 {
-			pwms = <&pwm0 06>;
+			pwms = <&pwm0 6>;
 			label = "Green PWM LED 1";
 		};
 		pwm_led2: pwm_led_2 {
-			pwms = <&pwm0 08>;
+			pwms = <&pwm0 8>;
 			label = "Blue PWM LED 2";
 		};
 	};
@@ -57,7 +57,7 @@
 	buttons {
 		compatible = "gpio-keys";
 		button0: button_0 {
-			gpios = <&gpio1 09 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
+			gpios = <&gpio1 9 (GPIO_PULL_UP | GPIO_ACTIVE_LOW)>;
 			label = "Reset button switch 0";
 		};
 	};
@@ -108,11 +108,11 @@ sensors_i2c: &i2c0 {
 
 &pwm0 {
 	status = "okay";
-	ch0-pin = <04>;
+	ch0-pin = <4>;
 	ch0-inverted;
-	ch1-pin = <06>;
+	ch1-pin = <6>;
 	ch1-inverted;
-	ch2-pin = <08>;
+	ch2-pin = <8>;
 	ch2-inverted;
 };
 
