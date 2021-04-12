@@ -9,3 +9,6 @@ project(tag_hello)
 
 target_sources(app PRIVATE src/main.c)
 
+include(${ZEPHYR_BASE}/samples/net/common/common.cmake)
+
+set(gen_dir ${ZEPHYR_BINARY_DIR}/include/generated/)
