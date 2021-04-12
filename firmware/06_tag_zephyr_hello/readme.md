@@ -27,7 +27,7 @@ rtt log
 ```log
 *** Booting Zephyr OS build zephyr-v2.5.0-159-g2bfaadffb807  ***
 
-[00:00:00.337,707] <inf> main: Starting
+[00:00:00.337,707] <inf> main: Hello from Sensor Tag
 [00:00:01.337,768] <inf> main: loop: 0
 [00:00:02.337,860] <inf> main: loop: 1
 [00:00:03.338,012] <inf> main: loop: 2
