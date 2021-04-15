@@ -90,8 +90,6 @@ Wire Wire Line
 	6350 5200 6600 5200
 Wire Wire Line
 	6600 4900 6350 4900
-Text Label 10850 4550 2    50   ~ 0
-SENS2_VCC
 Text Label 5900 5450 0    50   ~ 0
 INT1
 $Comp
@@ -135,10 +133,10 @@ VCC
 Text Label 3550 2750 2    50   ~ 0
 INT1
 $Comp
-L EVQ-PUA02K:EVQ-PUA02K S1
+L EVQ-PUA02K:EVQ-PUA02K SW2
 U 1 1 602F21F2
 P 5600 2750
-F 0 "S1" H 6200 3015 50  0000 C CNN
+F 0 "SW2" H 6200 3015 50  0000 C CNN
 F 1 "EVQ-PUA02K" H 6200 2924 50  0000 C CNN
 F 2 "EVQ-PUA02K:EVQPUA02K" H 6650 2850 50  0001 L CNN
 F 3 "https://www.mouser.in/ProductDetail/Panasonic/EVQ-PUA02K?qs=%2Fha2pyFadujMSX8lHuHLeTqtnZtxLpuLygd0%252BejhC2g%3D" H 6650 2750 50  0001 L CNN
@@ -154,10 +152,10 @@ F 11 "https://www.arrow.com/en/products/evq-pua02k/panasonic" H 6650 1950 50  00
 	1    0    0    -1  
 $EndComp
 $Comp
-L EVQ-PUA02K:EVQ-PUA02K S2
+L EVQ-PUA02K:EVQ-PUA02K SW1
 U 1 1 602F2ECF
 P 5600 3350
-F 0 "S2" H 6200 3615 50  0000 C CNN
+F 0 "SW1" H 6200 3615 50  0000 C CNN
 F 1 "EVQ-PUA02K" H 6200 3524 50  0000 C CNN
 F 2 "EVQ-PUA02K:EVQPUA02K" H 6650 3450 50  0001 L CNN
 F 3 "https://www.mouser.in/ProductDetail/Panasonic/EVQ-PUA02K?qs=%2Fha2pyFadujMSX8lHuHLeTqtnZtxLpuLygd0%252BejhC2g%3D" H 6650 3350 50  0001 L CNN
@@ -296,15 +294,7 @@ Wire Wire Line
 	7050 3350 6800 3350
 Wire Wire Line
 	5350 3350 5600 3350
-Text Label 3550 3050 2    50   ~ 0
-SENS2_VCC
-Text Label 3550 2150 2    50   ~ 0
-SENS1_VCC
-Wire Wire Line
-	3000 2150 3550 2150
-Wire Wire Line
-	3000 3050 3550 3050
-Text Label 10800 5300 2    50   ~ 0
+Text Label 10500 4900 2    50   ~ 0
 VCC
 Text Label 5800 6550 2    50   ~ 0
 SWDIO
@@ -470,10 +460,8 @@ Wire Wire Line
 Wire Wire Line
 	9600 5100 9600 4900
 Connection ~ 9600 4900
-Text Label 7600 1500 0    50   ~ 0
+Text Label 8100 1800 0    50   ~ 0
 VCC
-Text Label 7600 2150 0    50   ~ 0
-SENS1_VCC
 $Comp
 L MS860702BA01-50:MS860702BA01-50 IC3
 U 1 1 6029E7F5
@@ -527,8 +515,6 @@ F 3 "" H 8450 2100 50  0001 C CNN
 	1    8450 2100
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8300 1800 8450 1800
 Wire Wire Line
 	8450 1900 8450 1800
 Connection ~ 8450 1800
@@ -609,46 +595,6 @@ NoConn ~ 3000 3250
 NoConn ~ 3000 3350
 NoConn ~ 3000 3550
 NoConn ~ 3000 3650
-$Comp
-L Jumper:SolderJumper_3_Bridged12 JP1
-U 1 1 603ADD74
-P 8150 1800
-F 0 "JP1" V 8196 1868 50  0000 L CNN
-F 1 "SolderJumper_3_Bridged12" V 8650 1400 50  0000 L CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm" H 8150 1800 50  0001 C CNN
-F 3 "~" H 8150 1800 50  0001 C CNN
-	1    8150 1800
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Jumper:SolderJumper_3_Bridged12 JP2
-U 1 1 603AE514
-P 10350 4900
-F 0 "JP2" V 10304 4968 50  0000 L CNN
-F 1 "SolderJumper_3_Bridged12" V 9800 4400 50  0000 L CNN
-F 2 "Jumper:SolderJumper-3_P1.3mm_Bridged12_RoundedPad1.0x1.5mm" H 10350 4900 50  0001 C CNN
-F 3 "~" H 10350 4900 50  0001 C CNN
-	1    10350 4900
-	0    1    1    0   
-$EndComp
-Wire Wire Line
-	7600 2150 8150 2150
-Wire Wire Line
-	8150 2150 8150 2000
-Wire Wire Line
-	8150 1600 8150 1500
-Wire Wire Line
-	8150 1500 7600 1500
-Wire Wire Line
-	10200 4900 9900 4900
-Wire Wire Line
-	10850 4550 10350 4550
-Wire Wire Line
-	10350 4550 10350 4700
-Wire Wire Line
-	10800 5300 10350 5300
-Wire Wire Line
-	10350 5100 10350 5300
 NoConn ~ 3000 2250
 Wire Wire Line
 	9600 4900 9900 4900
@@ -745,4 +691,10 @@ Wire Wire Line
 	3550 2450 3000 2450
 Wire Wire Line
 	3000 2550 3550 2550
+Wire Wire Line
+	8100 1800 8450 1800
+Wire Wire Line
+	9900 4900 10500 4900
+NoConn ~ 3000 2150
+NoConn ~ 3000 3050
 $EndSCHEMATC
