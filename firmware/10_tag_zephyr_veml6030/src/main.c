@@ -13,9 +13,9 @@ void main(void)
 	struct sensor_value val;
 	uint32_t lum = 0U;
 
-	LOG_INF("MAX44009 light sensor application\n");
+	LOG_INF("VEML6030 light sensor application\n");
 
-	dev = device_get_binding("MAX44009");
+	dev = device_get_binding("VEML6030");
 	if (!dev) {
 		LOG_ERR("sensor: device not found.\n");
 		return;

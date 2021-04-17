@@ -12,6 +12,8 @@ west flash
 ```
 
 
+https://docs.zephyrproject.org/latest/guides/porting/board_porting.html
+
 https://stackoverflow.com/questions/62358554/zephyros-how-to-add-driver-module-to-out-of-tree-project
 
 https://www.zephyrproject.org/how-to-build-drivers-for-zephyr-rtos/
@@ -21,3 +23,7 @@ https://interrupt.memfault.com/blog/building-drivers-on-zephyr
 https://docs.zephyrproject.org/latest/reference/drivers/index.html
 https://docs.zephyrproject.org/1.9.0/devices/drivers/drivers.html
 https://docs.zephyrproject.org/latest/reference/peripherals/sensor.html
+
+
+https://www.mouser.com/datasheet/2/427/veml6030-1767367.pdf
+https://www.mouser.com/datasheet/2/418/5/NG_DS_MS8607-02BA01_B3-1134999.pdf

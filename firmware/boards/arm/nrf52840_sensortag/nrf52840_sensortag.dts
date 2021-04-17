@@ -105,11 +105,11 @@
 	sda-gpios = <&gpio1 15 0>;
 	scl-gpios = <&gpio1 13 0>;
 
-	max44009@48 {
-		compatible = "maxim,max44009";
+	veml6030@48 {
+		compatible = "vishay,veml6030";
 		reg = <0x48>;
 		int-gpios = <&gpio0 31 0>;
-		label = "MAX44009";
+		label = "VEML6030";
 	};
 };
 

@@ -28,7 +28,7 @@ static int veml6030_reg_read(struct veml6030_data *drv_data, uint8_t reg,
 		},
 		{
 			.buf = val,
-			.len = 1,
+			.len = 2,
 			.flags = I2C_MSG_READ,
 		},
 	};
@@ -96,7 +96,7 @@ static int veml6030_attr_set(const struct device *dev,
 			value = VEML6030_CONTINUOUS_SAMPLING;
 		}
 
-		if (veml6030_reg_update(drv_data, VEML6030_REG_CONFIG,
+		if (veml6030_reg_update(drv_data, VEML6030_REG_ALS_CONF,
 					VEML6030_SAMPLING_CONTROL_BIT,
 					value) != 0) {
 			LOG_DBG("Failed to set attribute!");
@@ -116,24 +116,17 @@ static int veml6030_sample_fetch(const struct device *dev,
 				 enum sensor_channel chan)
 {
 	struct veml6030_data *drv_data = dev->data;
-	uint8_t val_h, val_l;
+	uint16_t val;
 
 	__ASSERT_NO_MSG(chan == SENSOR_CHAN_ALL || chan == SENSOR_CHAN_LIGHT);
 
 	drv_data->sample = 0U;
 
-	if (veml6030_reg_read(drv_data, VEML6030_REG_LUX_HIGH_BYTE, &val_h,
-			      false) != 0) {
+	if (veml6030_reg_read(drv_data, VEML6030_REG_ALS, &val,false) != 0) {
 		return -EIO;
 	}
 
-	if (veml6030_reg_read(drv_data, VEML6030_REG_LUX_LOW_BYTE, &val_l,
-			      true) != 0) {
-		return -EIO;
-	}
-
-	drv_data->sample = ((uint16_t)val_h) << 8;
-	drv_data->sample += val_l;
+	drv_data->sample = val;
 
 	return 0;
 }
@@ -143,25 +136,12 @@ static int veml6030_channel_get(const struct device *dev,
 				struct sensor_value *val)
 {
 	struct veml6030_data *drv_data = dev->data;
-	uint32_t uval;
 
 	if (chan != SENSOR_CHAN_LIGHT) {
 		return -ENOTSUP;
 	}
 
-	/**
-	 * sample consists of 4 bits of exponent and 8 bits of mantissa
-	 * bits 15 to 12 are exponent bits
-	 * bits 11 to 8 and 3 to 0 are the mantissa bits
-	 */
-	uval = drv_data->sample;
-	uval = (uval & VEML6030_MANTISSA_LOW_NIBBLE_MASK) +
-	       ((uval & VEML6030_MANTISSA_HIGH_NIBBLE_MASK) >> 4);
-	uval = uval << (drv_data->sample >> VEML6030_SAMPLE_EXPONENT_SHIFT);
-
-	/* lux is the integer of sample output multiplied by 0.045. */
-	val->val1 = (uval * 45U) / 1000;
-	val->val2 = ((uval * 45U) % 1000) * 1000U;
+	val->val1 = drv_data->sample;
 
 	return 0;
 }
