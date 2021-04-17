@@ -4,7 +4,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#define DT_DRV_COMPAT maxim_max44009
+#define DT_DRV_COMPAT vishay_veml6030
 
 #include <device.h>
 #include <drivers/i2c.h>
@@ -78,54 +78,25 @@ static int veml6030_attr_set(const struct device *dev,
 	uint8_t value;
 	uint32_t cr;
 
-	if (chan != SENSOR_CHAN_LIGHT) {
-		return -ENOTSUP;
-	}
-
-	switch (attr) {
-	case SENSOR_ATTR_SAMPLING_FREQUENCY:
-		/* convert rate to mHz */
-		cr = val->val1 * 1000 + val->val2 / 1000;
-
-		/* the sensor supports 1.25Hz or continuous conversion */
-		switch (cr) {
-		case 1250:
-			value = 0U;
-			break;
-		default:
-			value = VEML6030_CONTINUOUS_SAMPLING;
-		}
-
-		if (veml6030_reg_update(drv_data, VEML6030_REG_ALS_CONF,
-					VEML6030_SAMPLING_CONTROL_BIT,
-					value) != 0) {
-			LOG_DBG("Failed to set attribute!");
-			return -EIO;
-		}
-
-		return 0;
-
-	default:
-		return -ENOTSUP;
-	}
-
-	return 0;
+	return -ENOTSUP;
 }
 
 static int veml6030_sample_fetch(const struct device *dev,
 				 enum sensor_channel chan)
 {
 	struct veml6030_data *drv_data = dev->data;
+	uint8_t vals[2];
 	uint16_t val;
 
 	__ASSERT_NO_MSG(chan == SENSOR_CHAN_ALL || chan == SENSOR_CHAN_LIGHT);
 
 	drv_data->sample = 0U;
 
-	if (veml6030_reg_read(drv_data, VEML6030_REG_ALS, &val,false) != 0) {
+	if (veml6030_reg_read(drv_data, VEML6030_REG_ALS, vals,false) != 0) {
 		return -EIO;
 	}
-
+	val = vals[0];
+	val = val * 256 + vals[1];
 	drv_data->sample = val;
 
 	return 0;
@@ -156,11 +127,10 @@ int veml6030_init(const struct device *dev)
 {
 	struct veml6030_data *drv_data = dev->data;
 
-	LOG_INF("veml6030_init() %s",DT_INST_BUS_LABEL(0));
-
 	drv_data->i2c = device_get_binding(DT_INST_BUS_LABEL(0));
 	if (drv_data->i2c == NULL) {
-		LOG_DBG("Failed to get pointer to %s device!",DT_INST_BUS_LABEL(0));
+		LOG_DBG("Failed to get pointer to %s device!",
+			    DT_INST_BUS_LABEL(0));
 		return -EINVAL;
 	}
 

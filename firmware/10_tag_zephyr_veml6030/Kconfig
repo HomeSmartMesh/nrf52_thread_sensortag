@@ -1,4 +1,4 @@
 
 source "$ZEPHYR_BASE/Kconfig"
 
-rsource "../drivers/Kconfig"
+#rsource "../drivers/Kconfig"
