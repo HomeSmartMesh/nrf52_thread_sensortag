@@ -99,7 +99,7 @@
 	rx-pin = <2>;
 };
 
-&i2c0 {
+sensors_i2c: &i2c0 {
 	compatible = "nordic,nrf-twi";
 	status = "okay";
 	sda-gpios = <&gpio1 15 0>;

@@ -5,7 +5,7 @@ description: |
     Maxim MAX44009 Ambient Light Sensor. See datasheet at
     https://datasheets.maximintegrated.com/en/ds/MAX44009.pdf
 
-compatible: "maxim,max44009"
+compatible: "vishay,veml6030"
 
 include: i2c-device.yaml
 

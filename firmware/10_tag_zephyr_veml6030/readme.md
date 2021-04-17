@@ -7,8 +7,17 @@
 
 ## usage
 ```bash
-west build -b nrf52840_sensortag
+west build -b nrf52840_sensortag -- -DCONF_FILE=prj-shell.conf
+west build -b nrf52840_sensortag -- -DCONF_FILE=prj-log.conf
 west flash
+```
+
+error
+```log
+[00:00:00.325,012] <inf> main: Hello from Sensor Tag I2C example
+[00:00:00.325,012] <inf> main: VEML6030 light sensor application
+
+[00:00:00.325,042] <err> main: sensor: device not found.
 ```
 
 
