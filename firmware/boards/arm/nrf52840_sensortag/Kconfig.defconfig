@@ -8,7 +8,4 @@ if BOARD_NRF52840_SENSORTAG
 config BOARD
 	default "nrf52840_sensortag"
 
-config BT_CTLR
-	default BT
-
 endif # BOARD_NRF52840_SENSORTAG

@@ -1,0 +1,29 @@
+/*
+ * Copyright (c) 2016 Intel Corporation
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+#ifndef ZEPHYR_DRIVERS_SENSOR_VEML6030_VEML6030_H_
+#define ZEPHYR_DRIVERS_SENSOR_VEML6030_VEML6030_H_
+
+#include <sys/util.h>
+
+#define VEML6030_I2C_ADDRESS	DT_INST_REG_ADDR(0)
+
+#define VEML6030_SAMPLING_CONTROL_BIT	BIT(7)
+#define VEML6030_CONTINUOUS_SAMPLING	BIT(7)
+#define VEML6030_SAMPLE_EXPONENT_SHIFT	12
+#define VEML6030_MANTISSA_HIGH_NIBBLE_MASK	0xf00
+#define VEML6030_MANTISSA_LOW_NIBBLE_MASK	0xf
+
+#define VEML6030_REG_CONFIG		0x02
+#define VEML6030_REG_LUX_HIGH_BYTE	0x03
+#define VEML6030_REG_LUX_LOW_BYTE	0x04
+
+struct veml6030_data {
+	const struct device *i2c;
+	uint16_t sample;
+};
+
+#endif /* _SENSOR_VEML6030_ */

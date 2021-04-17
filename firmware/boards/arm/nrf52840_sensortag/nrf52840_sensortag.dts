@@ -102,8 +102,15 @@
 &i2c0 {
 	compatible = "nordic,nrf-twi";
 	status = "okay";
-	sda-pin = <47>;
-	scl-pin = <45>;
+	sda-gpios = <&gpio1 15 0>;
+	scl-gpios = <&gpio1 13 0>;
+
+	max44009@48 {
+		compatible = "maxim,max44009";
+		reg = <0x48>;
+		int-gpios = <&gpio0 31 0>;
+		label = "MAX44009";
+	};
 };
 
 &pwm0 {

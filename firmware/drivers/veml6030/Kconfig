@@ -1,0 +1,10 @@
+# VEML6030 light sensor configuration options
+
+# Copyright (c) 2016 Intel Corporation
+# SPDX-License-Identifier: Apache-2.0
+
+config VEML6030
+	bool "VEML6030 Light Sensor"
+	depends on I2C
+	help
+	  Enable driver for VEML6030 light sensors.
