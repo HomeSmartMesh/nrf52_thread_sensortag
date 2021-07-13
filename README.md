@@ -4,6 +4,5 @@ nRF52840 small sensor Tag, Low power design, battery operated
 # documentation website
 https://www.homesmartmesh.com/docs/microcontrollers/nrf52/thread_sensortag/
 # community discussion
-[<img src ="./media/discord.png" width="100">](https://discord.gg/SdKHaAfKN4)
-
-Do you have a question or an idea related to this project ? Feel free to join the [discord](https://discord.gg/SdKHaAfKN4) channel to chat live, make suggestions and give feedback.
+Free support, feedback and discussions on the Home Smart Mesh forum
+[![Thread SensorTag Category](./media/forum.png)](https://homesmartmesh.discourse.group/c/projects/thread-sensortag/13)
