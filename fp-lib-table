@@ -8,4 +8,5 @@
   (lib (name MS860702BA01-50)(type Legacy)(uri ${KIPRJMOD}/components/MS860702BA01-50/KiCad/MS860702BA01-50.mod)(options "")(descr ""))
   (lib (name MS88SF2)(type KiCad)(uri ${KIPRJMOD}/components/MS88SF2/MS88SF2.pretty)(options "")(descr ""))
   (lib (name APHF1608LSEEQBDZGKC)(type Legacy)(uri ${KIPRJMOD}/components/APHF1608LSEEQBDZGKC/KiCad/APHF1608LSEEQBDZGKC.mod)(options "")(descr ""))
+  (lib (name logo)(type KiCad)(uri ${KIPRJMOD}/components/logo)(options "")(descr ""))
 )
