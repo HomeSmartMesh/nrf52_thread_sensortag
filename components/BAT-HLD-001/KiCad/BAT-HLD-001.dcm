@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP BAT-HLD-001
+D Coin Cell Battery Holders Linx CR2032 Battery Holder
+K
+F https://www.mouser.com/ds/2/238/bat-hld-001-220194.pdf
+$ENDCMP
+#
+#End Doc Library

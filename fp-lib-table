@@ -9,4 +9,5 @@
   (lib (name MS88SF2)(type KiCad)(uri ${KIPRJMOD}/components/MS88SF2/MS88SF2.pretty)(options "")(descr ""))
   (lib (name APHF1608LSEEQBDZGKC)(type Legacy)(uri ${KIPRJMOD}/components/APHF1608LSEEQBDZGKC/KiCad/APHF1608LSEEQBDZGKC.mod)(options "")(descr ""))
   (lib (name logo)(type KiCad)(uri ${KIPRJMOD}/components/logo)(options "")(descr ""))
+  (lib (name BAT-HLD-001)(type Legacy)(uri ${KIPRJMOD}/components/BAT-HLD-001/KiCad/BAT-HLD-001.mod)(options "")(descr ""))
 )
