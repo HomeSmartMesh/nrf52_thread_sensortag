@@ -194,7 +194,7 @@
     (fp_text reference BT1 (at 0 0) (layer B.SilkS)
       (effects (font (size 1.27 1.27) (thickness 0.254)) (justify mirror))
     )
-    (fp_text value Battery (at 0 0) (layer B.SilkS) hide
+    (fp_text value BAT-HLD-001 (at 0 0) (layer B.SilkS) hide
       (effects (font (size 1.27 1.27) (thickness 0.254)) (justify mirror))
     )
     (fp_line (start -13.7 -9.9) (end -13.7 9.9) (layer Dwgs.User) (width 0.1))
@@ -802,6 +802,7 @@
 
   (module logo:mig locked (layer B.Cu) (tedit 0) (tstamp 61271A8B)
     (at 110.2106 56.4515 180)
+    (attr virtual)
     (fp_text reference LOGO2 (at 0 0) (layer B.SilkS) hide
       (effects (font (size 1.524 1.524) (thickness 0.3)) (justify mirror))
     )
@@ -2198,14 +2199,11 @@
 
   (segment (start 113.14 56.515) (end 114.783 56.515) (width 0.25) (layer F.Cu) (net 1))
   (segment (start 114.783 56.515) (end 114.846 56.5785) (width 0.25) (layer F.Cu) (net 1))
-  (segment (start 110.318 64.6176) (end 110.318 67.7984) (width 0.25) (layer B.Cu) (net 11))
-  (segment (start 110.318 67.7984) (end 110.338 67.818) (width 0.25) (layer B.Cu) (net 11))
   (segment (start 108.046 65.3781) (end 108.046 66.8708) (width 0.25) (layer F.Cu) (net 1))
   (segment (start 108.046 66.8708) (end 107.861 67.056) (width 0.25) (layer F.Cu) (net 1))
   (segment (start 113.14 69.715) (end 111.743 69.715) (width 0.25) (layer F.Cu) (net 1))
   (segment (start 111.743 69.715) (end 111.735 69.723) (width 0.25) (layer F.Cu) (net 1))
   (via (at 114.846 56.5785) (size 0.8) (layers F.Cu B.Cu) (net 1))
-  (via (at 110.338 67.818) (size 0.8) (layers F.Cu B.Cu) (net 11))
   (via (at 107.861 67.056) (size 0.8) (layers F.Cu B.Cu) (net 1))
   (via (at 111.735 69.723) (size 0.8) (layers F.Cu B.Cu) (net 1))
   (via (at 131.2291 78.994) (size 0.8) (drill 0.4) (layers F.Cu B.Cu) (net 1))
@@ -2299,6 +2297,9 @@
   (segment (start 133.7691 74.1392) (end 133.7624 74.1459) (width 0.25) (layer F.Cu) (net 6))
   (segment (start 132.6766 65.315) (end 134.8938 67.5322) (width 0.25) (layer F.Cu) (net 6))
   (segment (start 130.34 65.315) (end 132.6766 65.315) (width 0.25) (layer F.Cu) (net 6))
+  (segment (start 110.318 64.6176) (end 110.318 67.7984) (width 0.25) (layer B.Cu) (net 11))
+  (segment (start 110.318 67.7984) (end 110.338 67.818) (width 0.25) (layer B.Cu) (net 11))
+  (via (at 110.338 67.818) (size 0.8) (layers F.Cu B.Cu) (net 11))
   (segment (start 124.435 77.718) (end 124.435 79.3623) (width 0.25) (layer B.Cu) (net 11))
   (segment (start 128.8032 72.3195) (end 128.7923 72.3195) (width 0.25) (layer B.Cu) (net 11))
   (segment (start 128.7923 72.3195) (end 126.5246 74.5872) (width 0.25) (layer B.Cu) (net 11))
@@ -2440,7 +2441,7 @@
   (segment (start 114.3153 66.415) (end 115.895 67.9947) (width 0.25) (layer F.Cu) (net 31))
   (segment (start 115.895 67.9947) (end 115.895 74.486) (width 0.25) (layer F.Cu) (net 31))
 
-  (zone (net 1) (net_name GND) (layer F.Cu) (tstamp 60BB3E81) (hatch edge 0.508)
+  (zone (net 1) (net_name GND) (layer F.Cu) (tstamp 612B4F37) (hatch edge 0.508)
     (connect_pads (clearance 0.2))
     (min_thickness 0.254)
     (fill yes (arc_segments 32) (thermal_gap 0.254) (thermal_bridge_width 0.508))
@@ -2801,7 +2802,7 @@
       )
     )
   )
-  (zone (net 1) (net_name GND) (layer B.Cu) (tstamp 60BB3E7E) (hatch edge 0.508)
+  (zone (net 1) (net_name GND) (layer B.Cu) (tstamp 612B4F34) (hatch edge 0.508)
     (connect_pads (clearance 0.2))
     (min_thickness 0.254)
     (fill yes (arc_segments 32) (thermal_gap 0.254) (thermal_bridge_width 0.508))
@@ -2962,7 +2963,7 @@
       )
     )
   )
-  (zone (net 11) (net_name /VCC) (layer B.Cu) (tstamp 0) (hatch edge 0.508)
+  (zone (net 11) (net_name /VCC) (layer B.Cu) (tstamp 612B4F31) (hatch edge 0.508)
     (priority 1)
     (connect_pads (clearance 0.2))
     (min_thickness 0.254)
