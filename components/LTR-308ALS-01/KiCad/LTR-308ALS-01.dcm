@@ -1,0 +1,9 @@
+EESchema-DOCLIB  Version 2.0
+#
+$CMP LTR-308ALS-01
+D Ambient Light Sensors Ambient Light Photo Sensor
+K
+F https://optoelectronics.liteon.com/upload/download/DS86-2016-0027/LTR-308ALS_Final_%20DS_V1%201.pdf
+$ENDCMP
+#
+#End Doc Library
