@@ -22,7 +22,7 @@ jobs:
 
     - name: Run KiBot
       run: |
-        kibot -b "nrf52-sensor-tag.kicad_pcb"
+        kibot -b "nrf52-sensor-tag.kicad_pcb" -v
       
     - name: Upload results
       uses: actions/upload-artifact@v3
