@@ -64,3 +64,10 @@ outputs:
   - name: '3D STEP'
     type: 'step'
     dir: 'Generated/3D'
+
+  - name: 'PCB Print'
+    type: 'pcb_print'
+    dir: 'Generated/print'
+    options:
+      format: 'PNG'
+      
