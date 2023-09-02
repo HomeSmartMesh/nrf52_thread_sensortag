@@ -1,0 +1,31 @@
+# SPDX-FileCopyrightText: 2022 nerdyscout <https://github.com/nerdyscout/>
+#
+# SPDX-License-Identifier: CC0-1.0
+
+
+name: "KiBot CI"
+on: [push, pull_request] 
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  quick:
+    name: "Manufacturing Data (action)"
+    runs-on: ubuntu-latest
+    container: ghcr.io/inti-cmnb/kicad7_auto_full:latest
+
+    steps:
+    - name: Checkout repo
+      uses: actions/checkout@v3
+      with:
+        # So we can run a diff between last 2 changes
+        fetch-depth: '0'
+
+    - name: Run KiBot
+      run: |
+        kibot -b "nrf52-sensor-tag.kicad_pcb"
+      
+    - name: Upload results
+      uses: actions/upload-artifact@v3
+      with:
+        name: Automatic_outputs
+        path: Generated

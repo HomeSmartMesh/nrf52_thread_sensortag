@@ -1,0 +1,66 @@
+kibot:
+  version: 1
+  
+global:
+   drc_exclusions_workaround: true
+
+preflight:
+  set_text_variables:
+    - name: "date"
+      command: git log -1 --format="%as"
+    - name: "version"
+      command: git describe --exact-match --tags 2> /dev/null || git rev-parse --short HEAD
+  update_xml: true
+  run_erc: true
+  run_drc: true
+  check_zone_fills: true
+  ignore_unconnected: false
+
+outputs:
+  - name: 'Blender 3D Image'
+    type: 'blender_export'
+    dir: 'Generated/render'
+    options:
+      point_of_view:
+        rotate_x: 65
+        rotate_y: 0
+        rotate_z: 0
+      pcb3d:
+        download: true
+      render_options:
+        samples: 100
+        transparent_background: true
+      outputs:
+        type: render
+
+  - name: 'Gerber Files'
+    type: 'gerber'
+    dir: 'Generated/gerbers'
+    layers: ["F.Cu", "B.Cu", "F.Silkscreen", "B.Silkscreen", "F.Mask", "B.Mask", "Edge.Cuts", "F.Paste", "B.Paste"]
+
+  - name: 'Gerber Drill Files'
+    type: 'gerb_drill'
+    dir: 'Generated/gerbers'
+
+  - name: 'iBOM'
+    type: 'ibom'
+    dir: 'Generated/BoM'
+
+  - name: 'bom_csv'
+    comment: "Bill of Materials in CSV format"
+    type: bom
+    dir: Generated/BoM
+    options:
+      use_alt: true
+
+  - name: 'Schematics'
+    type: 'pdf_sch_print'
+    dir: 'Generated'
+
+  - name: 'Pick and Place'
+    type: 'position'
+    dir: 'Generated/position'
+
+  - name: '3D STEP'
+    type: 'step'
+    dir: 'Generated/3D'
