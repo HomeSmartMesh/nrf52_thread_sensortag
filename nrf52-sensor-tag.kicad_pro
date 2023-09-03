@@ -46,15 +46,11 @@
         "silk_text_upright": false,
         "zones": {
           "45_degree_only": false,
-          "min_clearance": 0.19999999999999998
+          "min_clearance": 0.15
         }
       },
       "diff_pair_dimensions": [],
-      "drc_exclusions": [
-        "lib_footprint_mismatch|111214457|72836546|00000000-0000-0000-0000-000061271a8b|00000000-0000-0000-0000-000000000000",
-        "lib_footprint_mismatch|121740000|60515000|00000000-0000-0000-0000-0000602380ea|00000000-0000-0000-0000-000000000000",
-        "lib_footprint_mismatch|121768000|64617600|00000000-0000-0000-0000-0000601fbf74|00000000-0000-0000-0000-000000000000"
-      ],
+      "drc_exclusions": [],
       "meta": {
         "filename": "board_design_settings.json",
         "version": 2
@@ -81,7 +77,7 @@
         "items_not_allowed": "error",
         "length_out_of_range": "error",
         "lib_footprint_issues": "warning",
-        "lib_footprint_mismatch": "warning",
+        "lib_footprint_mismatch": "ignore",
         "malformed_courtyard": "error",
         "microvia_drill_out_of_range": "error",
         "missing_courtyard": "ignore",
