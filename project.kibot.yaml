@@ -65,9 +65,10 @@ outputs:
     type: 'step'
     dir: 'Generated/3D'
 
-  - name: 'PCB Print'
-    type: 'pcb_print'
+  - name: 'PCB Print Top'
+    type: 'pcbdraw'
     dir: 'Generated/print'
     options:
-      format: 'PNG'
+      format: 'png'
+      show_components: 'all'
       
